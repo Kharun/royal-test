@@ -1,0 +1,252 @@
+@import url("./fonts.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* COLORS */
+    --black: #222222;
+    --green: #01665E;
+    --white: #FFFFFF;
+    --white-secondary: #FAF9F6;
+    --orange: #FF7700;
+    --orange-secondary: rgba(255, 132, 0, 0.15);
+    --white-green: #018E0D;
+    --dark-green: #00534C;
+    --white-green-secondary: rgba(94, 255, 0, 0.15);
+}
+body {
+    font-family: "Gilroy";
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    font-family: "Florentia";
+}
+
+.container {
+    max-width: 1310px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    height: 100vh;
+}
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    transition: .3s ease-in-out;
+}
+.nav.active {
+  background: var(--white);
+  a, p, svg {
+    color: var(--black) !important;
+  }
+}
+.nav.hide {
+  transform: translateY(-100%);
+}
+.nav_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1310px;
+    padding: 20px 15px;
+    margin: 0 auto;
+    position: relative;
+}
+.nav_left, .nav_right {
+    display: flex;
+}
+.nav_left {
+    align-items: center;
+    gap: 54px;
+}
+.nav_theme {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--dark-green);
+    transition: .1s linear;
+    cursor: pointer;
+}
+.nav_theme:hover {
+    opacity: .9;
+}
+.nav_phone {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white);
+}
+.nav_lang {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 14px;
+    position: relative;
+}
+.nav_lang_block {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.nav_lang_block img {
+    transition: .3s ease-in-out;
+}
+.nav_lang_block.active img:last-child {
+    transform: rotate(180deg);
+}
+.nav_lang_block p {
+    padding: 0 17px 0 5px;
+}
+.nav_lang_content {
+    position: absolute;
+    background: var(--white);
+    color: var(--black);
+    top: 30px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+.nav_lang_content p {
+    cursor: pointer;
+    padding: 10px;
+    transition: .1s linear;
+}
+.nav_lang_content p:hover {
+    background: var(--black);
+    color: var(--white);
+}
+.nav_lang_content p.active {
+    background: var(--black);
+    color: var(--white) !important;
+}
+.nav_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--white);
+}
+.nav_right {
+    gap: 30px;
+    align-items: center;
+}
+.nav_objects {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--white);
+}
+.burger_menu {
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* header swiper */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.header_pag {
+    display: flex;
+}
+.header_pag {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    right: 80px;
+    bottom: 85px;
+    gap: 5px;
+    align-items: center;
+}
+.header_pag_next, .header_pag_prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+.header_pag_next:hover, .header_pag_prev:hover {
+    opacity: 0.8;
+}
+.swiper-button-disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+.swiper-button-disabled:hover {
+    opacity: 0.3;
+}
+.header_pagination {
+    position: absolute;
+    z-index: 3;
+    left: 80px;
+    bottom: 80px;
+    color: var(--white);
+    width: 100px;
+    font-weight: 200;
+    font-family: "Florentia";
+    font-size: 18px;
+}
+.swiper-pagination-current {
+    font-size: 37px;
+}
+.header_swiper_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+}
+.header_swiper_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    color: var(--white);
+    text-align: center;
+}
+.header_swiper_content h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 25px;
+    span {
+        font-size: 45px;
+    }
+}
+.header_swiper_content p {
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Florentia";
+}
+
+/* about */
+.about {
+    height: 100vh;
+}

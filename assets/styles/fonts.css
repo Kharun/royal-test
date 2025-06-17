@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Florentia";
+    font-weight: 400;
+    src: url("../fonts/Florentia-Regular-trial.ttf");
+}
+@font-face {
+    font-family: "Florentia";
+    font-weight: 200;
+    src: url("../fonts/Florentia-Light-trial.ttf");
+}
+@font-face {
+    font-family: "Florentia";
+    font-weight: 500;
+    src: url("../fonts/Florentia-Medium-trial.ttf");
+}
+@font-face {
+    font-family: "Florentia";
+    font-weight: 300;
+    src: url("../fonts/Florentia-Light-trial.ttf");
+}
+@font-face {
+    font-family: "Pramodia";
+    font-weight: 400;
+    src: url("../fonts/Pramodia\ -\ Demo.ttf");
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Regular.ttf");
+    font-weight: 400;
+}
