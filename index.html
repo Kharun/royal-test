@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Royal Test</title>
   </head>
   <body>
@@ -20,8 +21,16 @@
               <div class="nav_lang_block">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="10" cy="10" r="9.375" stroke="currentColor" stroke-width="1.25" />
-                  <path d="M9.26422 0.5C6.93088 3.16667 3.26395 11.5 9.26422 19.5" stroke="currentColor" stroke-width="1.25" />
-                  <path d="M10.7358 0.5C13.0691 3.16667 16.7361 11.5 10.7358 19.5" stroke="currentColor" stroke-width="1.25" />
+                  <path
+                    d="M9.26422 0.5C6.93088 3.16667 3.26395 11.5 9.26422 19.5"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                  />
+                  <path
+                    d="M10.7358 0.5C13.0691 3.16667 16.7361 11.5 10.7358 19.5"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                  />
                   <line x1="1" y1="7.375" x2="19" y2="7.375" stroke="currentColor" stroke-width="1.25" />
                   <line x1="1" y1="13.375" x2="19" y2="13.375" stroke="currentColor" stroke-width="1.25" />
                 </svg>
@@ -168,6 +177,10 @@
         </div>
       </nav>
 
+      <div class="header_royal">
+        <img src="./assets/img/royal.svg" alt="" />
+      </div>
+
       <div class="swiper header_swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -220,14 +233,189 @@
       </div>
     </header>
 
-    <section class="about"></section>
+    <main class="main">
+      <section class="about container">
+        <div class="about_top_title">
+          <div class="about_texts" data-aos="fade-left" data-aos-duration="900">
+            <h2 class="about_top_text"><span>Для нас строительство </span> — это</h2>
+            <h2 class="about_top_text">искусство создавать надёжные, функциональные и вдохновляющие пространства</h2>
+          </div>
+        </div>
+        <div class="about_content">
+          <div class="about_left">
+            <div class="about_us">
+              <h2 data-aos="fade-right" data-aos-duration="1000">О компании</h2>
+              <img data-aos="fade-right" data-aos-duration="1300" src="./assets/img/about_img_2.png" alt="" />
+            </div>
+            <div class="about_us_text">
+              <p data-aos="fade-right" data-aos-duration="1000">
+                <span>R</span>oyal - строительная компания, которая сдает свои объекты в эксплуатацию в обещанные сроки.
+              </p>
+              <p data-aos="fade-right" data-aos-duration="1300">
+                Наши объекты строятся в 5-минутной ходьбе от парково-прогулочных зон, основных объектов соцбыта с
+                удобной транспортной развязкой.
+              </p>
+            </div>
+            <div class="about_bottom">
+              <div class="read" data-aos="fade-right" data-aos-duration="1000">читать все</div>
+            </div>
+          </div>
+          <div class="about_right" data-aos="fade-left" data-aos-duration="1100">
+            <div class="about_us mobile">
+              <h2 data-aos="fade-right" data-aos-duration="1000">О компании</h2>
+              <img data-aos="fade-right" data-aos-duration="1300" src="./assets/img/about_img_2.png" alt="" />
+            </div>
+            <img class="about_right_img" src="./assets/img/about_img_1.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="categories">
+        <div class="categories_content container">
+          <p class="categories_name" data-aos="fade-left" data-aos-duration="900">Объекты</p>
+          <h2 class="categories_title" data-aos="fade-down" data-aos-duration="1100">
+            Фильтруйте. Сравнивайте. <span>Выбирайте.</span>
+          </h2>
+          <div class="categories_top" data-aos="fade-down" data-aos-duration="1200">
+            <div class="categories_top_objects">
+              <div class="categories_top_item active">30 объектов</div>
+              <div class="categories_top_item">8 Жилых домой</div>
+            </div>
+          </div>
+          <div class="categories_statuses" data-aos="fade-down" data-aos-duration="1300">
+            <div class="categories_status">Все</div>
+            <div class="categories_status">Строящиеся</div>
+            <div class="categories_status">Завершенные</div>
+            <div class="categories_status">На стадии завершения</div>
+          </div>
+          <div class="categories_sort" data-aos="fade-down" data-aos-duration="1500">
+            <select name="" class="categories_select" id="">
+              <option value="" disabled selected>Выберите локацию</option>
+              <option value="">Бишкек</option>
+              <option value="">Ош</option>
+            </select>
+            <div class="range_slider">
+              <div class="values">
+                <div class="range_item"><span id="min-value">5</span> этажей</div>
+                <div class="range_item"><span id="max-value">28</span> этажей</div>
+              </div>
+              <input type="range" id="min" min="5" max="28" value="5" />
+              <input type="range" id="max" min="5" max="28" value="28" />
+            </div>
+            <div class="categories_sort_status">
+              <div class="categories_status">Квартиры</div>
+              <div class="categories_status">Офисы</div>
+              <div class="categories_status">Коттеджи</div>
+              <div class="categories_status">Коммерческие помещения</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="categories_items container">
+          <div class="categories_item" data-aos="fade-right" data-aos-duration="1000">
+            <h2 class="categories_item_title">Ынтымак</h2>
+            <div class="categories_item_info">
+              <p class="categories_item_status">Строится</p>
+              <p class="categories_item_address">
+                <img src="./assets/img/location.svg" alt="" />
+                Молдобасанова 8а
+              </p>
+              <p class="categories_item_address">
+                <img src="./assets/img/home.svg" alt="" />
+                Центр отдыха
+              </p>
+            </div>
+            <div class="categories_item_image">
+              <p>СТАРТ ПРОДАЖ</p>
+              <img src="./assets/img/categories_1.png" alt="" />
+            </div>
+          </div>
+
+          <div class="categories_item" data-aos="fade-left" data-aos-duration="1200">
+            <h2 class="categories_item_title">Tower</h2>
+            <div class="categories_item_info">
+              <p class="categories_item_status complete">Завершен</p>
+              <p class="categories_item_address">
+                <img src="./assets/img/location.svg" alt="" />
+                пр. Чынгыз Айтматова
+              </p>
+              <p class="categories_item_address">
+                <img src="./assets/img/home.svg" alt="" />
+                Жилой дом
+              </p>
+            </div>
+            <div class="categories_item_image">
+              <p>СТАРТ ПРОДАЖ</p>
+              <img src="./assets/img/categories_2.png" alt="" />
+            </div>
+          </div>
+
+          <div class="categories_item" data-aos="fade-right" data-aos-duration="1400">
+            <h2 class="categories_item_title">Royal Resort</h2>
+            <div class="categories_item_info">
+              <p class="categories_item_status">Строится</p>
+              <p class="categories_item_address">
+                <img src="./assets/img/location.svg" alt="" />
+                с. Чок-Тал Иссык-Куль
+              </p>
+              <p class="categories_item_address">
+                <img src="./assets/img/home.svg" alt="" />
+                Центр отдыха
+              </p>
+            </div>
+            <div class="categories_item_image">
+              <p>СТАРТ ПРОДАЖ</p>
+              <div class="swiper categories_swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./assets/img/categories_3.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="./assets/img/categories_3.png" alt="" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="categories_item" data-aos="fade-left" data-aos-duration="1600">
+            <h2 class="categories_item_title">Cambridge</h2>
+            <div class="categories_item_info">
+              <p class="categories_item_status complete">Завершен</p>
+              <p class="categories_item_address">
+                <img src="./assets/img/location.svg" alt="" />
+                Малдыбаева 279
+              </p>
+              <p class="categories_item_address">
+                <img src="./assets/img/home.svg" alt="" />
+                Жилой дом
+              </p>
+            </div>
+            <div class="categories_item_image">
+              <p>СТАРТ ПРОДАЖ</p>
+              <div class="swiper categories_swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./assets/img/categories_4.png" alt="" /></div>
+                  <div class="swiper-slide"><img src="./assets/img/categories_4.png" alt="" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="categories_bottom container">
+          <div class="read" data-aos="fade-left" data-aos-duration="1200">Смотреть все</div>
+        </div>
+      </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
 
     <script>
+      AOS.init();
       let swiper = new Swiper(".header_swiper", {
         navigation: {
           nextEl: ".header_pag_next",
@@ -236,6 +424,32 @@
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",
+        },
+        speed: 1500,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            translate: ["-100%", 0, 0],
+            scale: 1.1,
+          },
+          next: {
+            translate: ["100%", 0, 0],
+            scale: 1.1,
+          },
+        },
+        on: {
+          init: function () {
+            this.slides.forEach((slide) => {
+              slide.style.transformOrigin = "right center";
+            });
+          },
+          slideChangeTransitionStart: function () {},
+        },
+      });
+
+      let categoriesSwiper = new Swiper(".categories_swiper", {
+        pagination: {
+          el: ".swiper-pagination",
         },
         speed: 1500,
         effect: "creative",
