@@ -30,6 +30,77 @@ $(window).on("scroll", function () {
   lastScrollTop = currentScroll;
 });
 
+$(".nav_theme").click(function() {
+  document.body.classList.toggle('dark');
+})
+
+
+const reviewsItem = document.querySelector('.reviews_content');
+const customCursor = document.querySelector('.custom-cursor');
+
+reviewsItem.addEventListener('mouseenter', () => {
+  customCursor.style.opacity = '1';
+});
+
+reviewsItem.addEventListener('mouseleave', () => {
+  customCursor.style.opacity = '0';
+});
+
+reviewsItem.addEventListener('mousemove', (e) => {
+  customCursor.style.top = `${e.clientY}px`;
+  customCursor.style.left = `${e.clientX}px`;
+});
+
+const reviewsItem2 = document.querySelector('.ponorama');
+const customCursor2 = document.querySelector('.ponorama_cursor');
+
+reviewsItem2.addEventListener('mouseenter', () => {
+  customCursor2.style.opacity = '1';
+});
+
+reviewsItem2.addEventListener('mouseleave', () => {
+  customCursor2.style.opacity = '0';
+});
+
+reviewsItem2.addEventListener('mousemove', (e) => {
+  customCursor2.style.top = `${e.clientY}px`;
+  customCursor2.style.left = `${e.clientX}px`;
+});
+
+
+const newsItems = document.querySelectorAll('.news_item');
+const newItem = document.querySelector('.news_left');
+const newsCursor = document.querySelector('.news_cursor');
+
+newsItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    newsCursor.style.opacity = '1';
+  });
+
+  item.addEventListener('mouseleave', () => {
+    newsCursor.style.opacity = '0';
+  });
+
+  item.addEventListener('mousemove', (e) => {
+    newsCursor.style.top = `${e.clientY}px`;
+    newsCursor.style.left = `${e.clientX}px`;
+  });
+});
+
+newItem.addEventListener('mouseenter', () => {
+  newsCursor.style.opacity = '1';
+});
+
+newItem.addEventListener('mouseleave', () => {
+  newsCursor.style.opacity = '0';
+});
+
+newItem.addEventListener('mousemove', (e) => {
+  newsCursor.style.top = `${e.clientY}px`;
+  newsCursor.style.left = `${e.clientX}px`;
+});
+
+
 const minRange = $("#min");
 const maxRange = $("#max");
 const minValue = $("#min-value");
@@ -198,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -216,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -234,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -252,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -270,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -289,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: element,
           start: "top 90%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -303,6 +374,10 @@ window.addEventListener("DOMContentLoaded", () => {
     duration: 1,
     stagger: 0.3,
     ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about_top_text",
+      start: "top 80%",
+    },
   });
 
   gsap.from(".about_left", {
@@ -311,6 +386,10 @@ window.addEventListener("DOMContentLoaded", () => {
     duration: 1.2,
     delay: 0.5,
     ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about_top_text",
+      start: "top 80%",
+    },
   });
 
   gsap.from(".about_right", {
@@ -319,6 +398,10 @@ window.addEventListener("DOMContentLoaded", () => {
     duration: 1.2,
     delay: 0.7,
     ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about_top_text",
+      start: "top 80%",
+    },
   });
 
   gsap.from(".about_left img, .about_right_img", {
@@ -328,6 +411,10 @@ window.addEventListener("DOMContentLoaded", () => {
     delay: 1,
     stagger: 0.2,
     ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".about_top_text",
+      start: "top 80%",
+    },
   });
 
   gsap.from(".read", {
@@ -336,5 +423,227 @@ window.addEventListener("DOMContentLoaded", () => {
     duration: 1,
     delay: 1.4,
     ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about_top_text",
+      start: "top 80%",
+    },
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".abous_us_number",
+      start: "top 60%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  tl.from(".abous_us_number_texts p", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  tl.from(".abous_us_number_item", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power3.out"
+  }, "-=0.5");
+
+  const numberItems = document.querySelectorAll(".abous_us_number_item h2");
+  numberItems.forEach((item) => {
+    const endValue = parseInt(item.textContent.replace(/\D/g, "")) || 0;
+    const plus = item.textContent.includes("+") ? "+" : "";
+
+    gsap.fromTo(item, 
+      { innerText: 0 }, 
+      { 
+        innerText: endValue, 
+        duration: 2,
+        ease: "power1.out",
+        snap: { innerText: 1 },
+        onUpdate: function() {
+          item.innerText = Math.floor(this.targets()[0].innerText) + plus;
+        },
+        scrollTrigger: {
+          trigger: item,
+          start: "top 75%"
+        }
+      }
+    );
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.from(".ponorama_content h2", {
+    y: 80,
+    opacity: 0,
+    duration: 1.5,
+    ease: "back.out(1.7)",
+    scrollTrigger: {
+      trigger: ".ponorama",
+      start: "top 70%"
+    }
+  });
+
+  gsap.from(".ponorama_cursor", {
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".ponorama",
+      start: "top 90%"
+    }
+  });
+
+  gsap.to(".ring1", {
+    scale: 1.2,
+    opacity: 0,
+    duration: 1.5,
+    repeat: -1,
+    ease: "power1.out",
+    delay: 0
+  });
+
+  gsap.to(".ring2", {
+    scale: 1.2,
+    opacity: 0,
+    duration: 1.5,
+    repeat: -1,
+    ease: "power1.out",
+    delay: 0.5
+  });
+
+  gsap.to(".ring3", {
+    scale: 1.2,
+    opacity: 0,
+    duration: 1.5,
+    repeat: -1,
+    ease: "power1.out",
+    delay: 1
+  });
+
+  const cursor = document.querySelector(".ponorama_cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.2,
+      ease: "power3.out"
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.from(".news_top_title h2", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".news",
+      start: "top 70%"
+    }
+  });
+
+  gsap.from(".news_top_title p", {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".news",
+      start: "top 70%"
+    }
+  });
+
+  gsap.from(".news_top_text p", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".news",
+      start: "top 60%"
+    }
+  });
+
+  gsap.from(".news_left", {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".news_block",
+      start: "top 75%"
+    }
+  });
+
+  gsap.from(".news_item", {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".news_block",
+      start: "top 75%"
+    }
+  });
+
+  gsap.from(".news_bottom .read", {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".news_bottom",
+      start: "top 85%"
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.from(".contacts_title", {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".contacts",
+      start: "top 70%"
+    }
+  });
+
+  gsap.from(".contacts_input", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".contacts_form",
+      start: "top 75%"
+    }
+  });
+
+  gsap.from(".contacts_btn .read", {
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".contacts_form",
+      start: "top 75%"
+    }
   });
 });

@@ -16,6 +16,7 @@
   --white-green: #018e0d;
   --dark-green: #00534c;
   --white-green-secondary: rgba(94, 255, 0, 0.15);
+  --white-white: #ffffff;
 }
 html {
   overflow-x: hidden !important;
@@ -23,6 +24,12 @@ html {
 body {
   font-family: "Gilroy";
   user-select: none;
+}
+.dark {
+  --white: #222222;
+  --black: #ffffff;
+  --white-secondary: #222222;
+  --green: #ffffff;
 }
 a {
   text-decoration: none;
@@ -148,7 +155,7 @@ h2 {
 .nav_phone {
   font-weight: 400;
   font-size: 16px;
-  color: var(--white);
+  color: var(--white-white);
 }
 .nav_lang {
   color: var(--white);
@@ -160,6 +167,7 @@ h2 {
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: var(--white-white);
 }
 .nav_lang_block img {
   transition: 0.3s ease-in-out;
@@ -169,6 +177,7 @@ h2 {
 }
 .nav_lang_block p {
   padding: 0 17px 0 5px;
+  color: var(--white-white);
 }
 .nav_lang_content {
   position: absolute;
@@ -202,7 +211,7 @@ h2 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--white);
+  color: var(--white-white);
 }
 .nav_logo::before {
   content: unset;
@@ -214,10 +223,10 @@ h2 {
 .nav_objects {
   font-weight: 400;
   font-size: 14px;
-  color: var(--white);
+  color: var(--white-white);
 }
 .burger_menu {
-  color: var(--white);
+  color: var(--white-white);
   cursor: pointer;
 }
 
@@ -250,7 +259,7 @@ h2 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--white-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,6 +314,7 @@ h2 {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 25px;
+  color: var(--white-white);
   span {
     font-size: 45px;
   }
@@ -312,12 +322,14 @@ h2 {
 .header_swiper_content p {
   font-weight: 400;
   font-size: 18px;
+  color: var(--white-white);
   font-family: "Florentia";
 }
 
 /* about */
 .about {
-  padding: 100px 15px;
+  padding: 100px 0;
+  background: var(--white);
 }
 .about_top_title {
   display: flex;
@@ -332,6 +344,7 @@ h2 {
   gap: 6px;
   color: var(--black);
   position: absolute;
+  z-index: 1;
 }
 .about_top_text:first-child {
   display: flex;
@@ -375,6 +388,7 @@ h2 {
   font-weight: 300;
   font-size: 18px;
   font-style: italic;
+  color: var(--black);
 }
 .about_us_text {
   display: flex;
@@ -387,6 +401,7 @@ h2 {
   font-family: "Gilroy";
   position: relative;
   line-height: 25px;
+  color: var(--black);
   span {
     font-family: "Pramodia";
     font-size: 70px;
@@ -463,6 +478,7 @@ h2 {
   font-size: 18px;
   font-style: italic;
   font-family: "Florentia";
+  color: var(--black);
 }
 .categories_title {
   text-align: center;
@@ -497,7 +513,7 @@ h2 {
 }
 .categories_top_item:hover,
 .categories_top_item.active {
-  color: var(--black);
+  color: black;
   background: #f7f7f5;
   font-weight: 500;
 }
@@ -516,9 +532,11 @@ h2 {
   font-weight: 400;
   font-size: 16px;
   transition: 0.2s ease-in-out;
+  color: var(--black);
 }
 .categories_status:hover {
   background: #f7f7f5;
+  color: black;
 }
 .categories_status.active {
   background: #f7f7f5;
@@ -588,6 +606,7 @@ h2 {
   font-weight: 500;
   font-size: 50px;
   padding-bottom: 20px;
+  color: var(--black);
 }
 .categories_item_info {
   display: flex;
@@ -615,7 +634,7 @@ h2 {
   gap: 8px;
   font-weight: 500;
   font-size: 14px;
-  color: #2e2e2e;
+  color: var(--black);
 }
 .categories_item_image {
   position: relative;
@@ -698,6 +717,7 @@ h2 {
   font-weight: 400;
   font-size: 42px;
   line-height: 54px;
+  color: var(--white-white);
 }
 .abous_us_number_texts span {
   font-size: 158px;
@@ -720,16 +740,19 @@ h2 {
   font-family: "Florentia";
   font-weight: 300;
   font-size: 112px;
+  color: var(--white-white);
 }
 .abous_us_number_item p {
   font-size: 16px;
   font-family: "Gilroy";
   font-weight: 300;
+  color: var(--white-white);
 }
 
 /* reviews */
 .reviews {
   padding: 160px 0;
+  background: var(--white);
 }
 .reviews_top_title {
   display: flex;
@@ -781,6 +804,7 @@ h2 {
 .reviews_item_info p {
   font-weight: 400;
   font-size: 18px;
+  color: var(--black);
 }
 .reviews_item_social {
   padding: 5px 20px;
@@ -801,6 +825,7 @@ h2 {
   max-width: 420px;
   padding-right: 50px;
   position: relative;
+  color: var(--black);
 }
 .reviews_subtitle_title {
   font-family: "Gilroy";
@@ -845,11 +870,12 @@ h2 {
   justify-content: flex-end;
   align-items: flex-end;
   padding-bottom: 50px;
+  cursor: none;
 }
 .ponorama_content h2 {
   font-weight: 400;
   font-size: 42px;
-  color: var(--white);
+  color: var(--white-white);
 }
 
 /* news */
@@ -869,11 +895,13 @@ h2 {
 .news_top_title h2 {
   font-weight: 400;
   font-size: 60px;
+  color: var(--black);
 }
 .news_top_title p {
   font-family: "Florentia";
   font-weight: 200;
   font-size: 56px;
+  color: var(--black);
   span {
     font-family: "Pramodia";
     font-size: 130px;
@@ -908,6 +936,7 @@ h2 {
   font-weight: 500;
   font-size: 20px;
   font-family: "Gilroy";
+  color: var(--black);
 }
 .news_item_bottom {
   display: flex;
@@ -952,6 +981,7 @@ h2 {
 /* contacts */
 .contacts {
   padding: 210px 0 100px 0;
+  background: var(--white);
 }
 .contacts_title {
   font-weight: 400;
@@ -984,6 +1014,7 @@ h2 {
   font-weight: 400;
   font-size: 21px;
   color: var(--black);
+  background: unset;
 }
 .contacts_input::placeholder {
   color: #787878;
@@ -997,7 +1028,7 @@ h2 {
 .footer {
   background: #181717;
   padding: 90px 0;
-  color: var(--white);
+  color: var(--white-white);
 }
 .footer_content {
   display: flex;
@@ -1043,7 +1074,7 @@ h2 {
     font-weight: 400;
     font-size: 14px;
     font-family: "Florentia";
-    color: var(--white);
+    color: var(--white-white);
   }
 }
 .footer_phones {
@@ -1055,7 +1086,7 @@ h2 {
 .footer_phone {
   font-weight: 400;
   font-size: 16px;
-  color: var(--white);
+  color: var(--white-white);
 }
 .footer_address {
   padding: 50px 0 20px 0;
@@ -1084,11 +1115,92 @@ h2 {
   span {
     font-weight: 500;
     opacity: 1;
-    color: var(--white);
+    color: var(--white-white);
   }
 }
 .footer_mobile {
   display: none;
+}
+.range_item {
+  color: var(--black);
+}
+
+
+/*  */
+.custom-cursor, .ponorama_cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 348px;
+  height: 348px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--green);
+  font-weight: bold;
+  font-size: 24px;
+  background: transparent;
+  user-select: none;
+  position: fixed;
+  font-weight: 500;
+  font-size: 22px;
+  font-family: "Gilroy";
+  text-transform: uppercase;
+}
+
+.custom-cursor span {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+.rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 348px;
+  height: 348px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.ponorama_cursor {
+  color: var(--white-white);
+}
+.ponorama_cursor .ring {
+  border: 2px solid var(--white-white);
+}
+
+.ring {
+  position: absolute;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+}
+.ring1 {
+  width: 348px;
+  height: 348px;
+}
+.ring2 {
+  width: 338px;
+  height: 338px;
+  opacity: 0.7;
+}
+.ring3 {
+  width: 328px;
+  height: 328px;
+  opacity: 0.4;
+}
+.reviews_content {
+  cursor: none;
 }
 
 @media screen and (max-width: 980px) {
