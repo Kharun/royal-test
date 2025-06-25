@@ -30,76 +30,60 @@ $(window).on("scroll", function () {
   lastScrollTop = currentScroll;
 });
 
-$(".nav_theme").click(function() {
-  document.body.classList.toggle('dark');
-})
-
-
-const reviewsItem = document.querySelector('.reviews_content');
-const customCursor = document.querySelector('.custom-cursor');
-
-reviewsItem.addEventListener('mouseenter', () => {
-  customCursor.style.opacity = '1';
+$(".nav_theme").click(function () {
+  document.body.classList.toggle("dark");
+});
+$(".burger_menu").click(function () {
+  $(".menu").toggleClass("active");
 });
 
-reviewsItem.addEventListener('mouseleave', () => {
-  customCursor.style.opacity = '0';
-});
+// Cursor Custom
+function setupCustomCursor(targetSelector, cursorSelector) {
+  const target = document.querySelector(targetSelector);
+  const cursor = document.querySelector(cursorSelector);
 
-reviewsItem.addEventListener('mousemove', (e) => {
-  customCursor.style.top = `${e.clientY}px`;
-  customCursor.style.left = `${e.clientX}px`;
-});
+  if (!target || !cursor) return;
 
-const reviewsItem2 = document.querySelector('.ponorama');
-const customCursor2 = document.querySelector('.ponorama_cursor');
-
-reviewsItem2.addEventListener('mouseenter', () => {
-  customCursor2.style.opacity = '1';
-});
-
-reviewsItem2.addEventListener('mouseleave', () => {
-  customCursor2.style.opacity = '0';
-});
-
-reviewsItem2.addEventListener('mousemove', (e) => {
-  customCursor2.style.top = `${e.clientY}px`;
-  customCursor2.style.left = `${e.clientX}px`;
-});
-
-
-const newsItems = document.querySelectorAll('.news_item');
-const newItem = document.querySelector('.news_left');
-const newsCursor = document.querySelector('.news_cursor');
-
-newsItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    newsCursor.style.opacity = '1';
+  target.addEventListener("mouseenter", () => {
+    cursor.style.opacity = "1";
   });
 
-  item.addEventListener('mouseleave', () => {
-    newsCursor.style.opacity = '0';
+  target.addEventListener("mouseleave", () => {
+    cursor.style.opacity = "0";
   });
 
-  item.addEventListener('mousemove', (e) => {
-    newsCursor.style.top = `${e.clientY}px`;
-    newsCursor.style.left = `${e.clientX}px`;
+  target.addEventListener("mousemove", (e) => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
   });
+}
+
+setupCustomCursor(".reviews_content", ".custom-cursor");
+setupCustomCursor(".ponorama", ".ponorama_cursor");
+setupCustomCursor(".news_left", ".news_cursor");
+
+document.querySelectorAll(".news_item").forEach((item) => {
+  setupCustomCursorElement(item, ".news_cursor");
 });
 
-newItem.addEventListener('mouseenter', () => {
-  newsCursor.style.opacity = '1';
-});
+function setupCustomCursorElement(element, cursorSelector) {
+  const cursor = document.querySelector(cursorSelector);
 
-newItem.addEventListener('mouseleave', () => {
-  newsCursor.style.opacity = '0';
-});
+  if (!element || !cursor) return;
 
-newItem.addEventListener('mousemove', (e) => {
-  newsCursor.style.top = `${e.clientY}px`;
-  newsCursor.style.left = `${e.clientX}px`;
-});
+  element.addEventListener("mouseenter", () => {
+    cursor.style.opacity = "1";
+  });
 
+  element.addEventListener("mouseleave", () => {
+    cursor.style.opacity = "0";
+  });
+
+  element.addEventListener("mousemove", (e) => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
+}
 
 const minRange = $("#min");
 const maxRange = $("#max");
@@ -430,51 +414,54 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".abous_us_number",
       start: "top 60%",
-      toggleActions: "play none none none"
-    }
+      toggleActions: "play none none none",
+    },
   });
 
   tl.from(".abous_us_number_texts p", {
     y: 50,
     opacity: 0,
     duration: 1,
-    ease: "power3.out"
+    ease: "power3.out",
   });
 
-  tl.from(".abous_us_number_item", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.3,
-    ease: "power3.out"
-  }, "-=0.5");
+  tl.from(
+    ".abous_us_number_item",
+    {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power3.out",
+    },
+    "-=0.5"
+  );
 
   const numberItems = document.querySelectorAll(".abous_us_number_item h2");
   numberItems.forEach((item) => {
     const endValue = parseInt(item.textContent.replace(/\D/g, "")) || 0;
     const plus = item.textContent.includes("+") ? "+" : "";
 
-    gsap.fromTo(item, 
-      { innerText: 0 }, 
-      { 
-        innerText: endValue, 
+    gsap.fromTo(
+      item,
+      { innerText: 0 },
+      {
+        innerText: endValue,
         duration: 2,
         ease: "power1.out",
         snap: { innerText: 1 },
-        onUpdate: function() {
+        onUpdate: function () {
           item.innerText = Math.floor(this.targets()[0].innerText) + plus;
         },
         scrollTrigger: {
           trigger: item,
-          start: "top 75%"
-        }
+          start: "top 75%",
+        },
       }
     );
   });
@@ -488,8 +475,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "back.out(1.7)",
     scrollTrigger: {
       trigger: ".ponorama",
-      start: "top 70%"
-    }
+      start: "top 70%",
+    },
   });
 
   gsap.from(".ponorama_cursor", {
@@ -498,8 +485,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".ponorama",
-      start: "top 90%"
-    }
+      start: "top 90%",
+    },
   });
 
   gsap.to(".ring1", {
@@ -508,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1.5,
     repeat: -1,
     ease: "power1.out",
-    delay: 0
+    delay: 0,
   });
 
   gsap.to(".ring2", {
@@ -517,7 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1.5,
     repeat: -1,
     ease: "power1.out",
-    delay: 0.5
+    delay: 0.5,
   });
 
   gsap.to(".ring3", {
@@ -526,7 +513,7 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1.5,
     repeat: -1,
     ease: "power1.out",
-    delay: 1
+    delay: 1,
   });
 
   const cursor = document.querySelector(".ponorama_cursor");
@@ -536,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       x: e.clientX,
       y: e.clientY,
       duration: 0.2,
-      ease: "power3.out"
+      ease: "power3.out",
     });
   });
 });
@@ -549,8 +536,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".news",
-      start: "top 70%"
-    }
+      start: "top 70%",
+    },
   });
 
   gsap.from(".news_top_title p", {
@@ -560,8 +547,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".news",
-      start: "top 70%"
-    }
+      start: "top 70%",
+    },
   });
 
   gsap.from(".news_top_text p", {
@@ -572,8 +559,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".news",
-      start: "top 60%"
-    }
+      start: "top 60%",
+    },
   });
 
   gsap.from(".news_left", {
@@ -583,8 +570,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".news_block",
-      start: "top 75%"
-    }
+      start: "top 75%",
+    },
   });
 
   gsap.from(".news_item", {
@@ -595,8 +582,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".news_block",
-      start: "top 75%"
-    }
+      start: "top 75%",
+    },
   });
 
   gsap.from(".news_bottom .read", {
@@ -606,11 +593,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".news_bottom",
-      start: "top 85%"
-    }
+      start: "top 85%",
+    },
   });
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".contacts_title", {
@@ -620,8 +606,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".contacts",
-      start: "top 70%"
-    }
+      start: "top 70%",
+    },
   });
 
   gsap.from(".contacts_input", {
@@ -632,8 +618,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".contacts_form",
-      start: "top 75%"
-    }
+      start: "top 75%",
+    },
   });
 
   gsap.from(".contacts_btn .read", {
@@ -643,7 +629,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".contacts_form",
-      start: "top 75%"
-    }
+      start: "top 75%",
+    },
   });
 });
