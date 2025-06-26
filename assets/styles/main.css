@@ -1958,6 +1958,12 @@ h2 {
   .menu_logo {
     font-size: 30px;
   }
+  .swiper-slide img {
+    min-height: 330px;
+  }
+  .gallery_swiper .swiper-pagination {
+    display: none;
+  }
 }
 @media screen and (max-width: 480px) {
   .header_swiper_content h2 {
