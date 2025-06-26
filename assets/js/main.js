@@ -645,9 +645,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   gsap.to(".object_bg", {
-    xPercent: -50, // сдвигаем на 50% ширины .object_bg
+    xPercent: -50,
     ease: "none",
     repeat: -1,
-    duration: 20, // скорость анимации
+    duration: 20,
   });
 });
