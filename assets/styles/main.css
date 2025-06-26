@@ -1924,11 +1924,39 @@ h2 {
   .object_location {
     padding: 80px 0;
   }
-  .object_location_content {
-    max-height: 330px;
-  }
   .object_location_img {
     max-height: 330px;
+  }
+  .object_gallery_pag {
+    right: 15px;
+    bottom: 15px;
+  }
+  .object_gallery_line1 {
+    top: 10px;
+  }
+  .object_gallery_line2 {
+    left: 10px;
+    top: 10px;
+  }
+  .object_gallery_title {
+    top: 20px;
+    left: 20px;
+    font-size: 12px;
+  }
+  .object_about_title {
+    font-size: 22px;
+  }
+  .object_about_left {
+    max-width: unset;
+  }
+  .object_about_text {
+    font-size: 14px;
+  }
+  .object_location_item_info h2 {
+    font-size: 65px;
+  }
+  .menu_logo {
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 480px) {
