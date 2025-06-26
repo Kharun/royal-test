@@ -1,10 +1,10 @@
 const langBtn = $(".nav_lang_block");
 const langContent = $(".nav_lang_content");
-const nav = $(".nav");
+const nav = $(".nav_object");
 const topObjectsNavs = $(".categories_top_item");
 
 let lastScrollTop = 0;
-const threshold = 1600;
+const threshold = 1000;
 
 langBtn.click(function () {
   $(this).toggleClass("active");
@@ -107,7 +107,7 @@ maxRange.on("input", () => {
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const header = $(".header");
+  const header = $(".header_main");
   const headerRoyal = $(".header_royal");
   const headerSwiperContent = $(".header_swiper_content");
   const headerPagination = $(".header_pagination");
@@ -631,5 +631,23 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".contacts_form",
       start: "top 75%",
     },
+  });
+
+  gsap.to(".abous_us_number", {
+    backgroundPosition: "center 40%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".abous_us_number",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".object_bg", {
+    xPercent: -50, // сдвигаем на 50% ширины .object_bg
+    ease: "none",
+    repeat: -1,
+    duration: 20, // скорость анимации
   });
 });
