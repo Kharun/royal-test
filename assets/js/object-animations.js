@@ -255,8 +255,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-gsap.registerPlugin(ScrollTrigger);
-
 document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".object_sorting_top", {
     opacity: 0,
