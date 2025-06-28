@@ -143,7 +143,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  border-top: 1px solid #E2E2E2;
+  border-top: 1px solid #e2e2e2;
 }
 .nav_left,
 .nav_right {
@@ -257,6 +257,8 @@ h2 {
   transform: translateY(-2000px);
   visibility: hidden;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
   a,
   p,
   svg {
@@ -1260,6 +1262,19 @@ h2 {
   gap: 20px;
   color: var(--white-white);
 }
+.header_object::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
 .header_object h2 {
   font-weight: 500;
   font-size: 65px;
@@ -1377,7 +1392,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 315px;
 }
 .object_about_title {
   color: var(--black);
@@ -1419,6 +1434,20 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
+}
+.object_about_item::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 0%;
+  height: 1px;
+  background: red;
+  top: -1px;
+  transition: 0.5s ease-in-out;
+}
+.object_about_item:hover::before {
+  width: 100%;
 }
 .object_about_item p {
   color: var(--gray);
@@ -1484,6 +1513,8 @@ h2 {
   text-transform: uppercase;
   font-family: "Florentia";
 }
+
+/* object_gallery */
 .object_gallery {
   width: 100%;
   position: relative;
@@ -1618,7 +1649,7 @@ h2 {
 
 /* object_sorting */
 .object_sorting {
-  background: linear-gradient(180deg, #F4F2E9 0%, #FAF9F6 100%);
+  background: linear-gradient(180deg, #f4f2e9 0%, #faf9f6 100%);
   color: var(--black);
 }
 .object_sorting_content {
@@ -1665,7 +1696,7 @@ h2 {
   border-radius: 100px;
   background: var(--white);
   cursor: pointer;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 .object_floor_item:hover {
   background: var(--black);
@@ -1719,7 +1750,21 @@ h2 {
   text-align: center;
   padding: 100px 50px;
   position: relative;
+  border-right: 1px solid #e9e9e9;
+  border-left: 1px solid #e9e9e9;
 }
+.object_filters_item::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  z-index: 1;
+  height: 1px;
+  background: #e9e9e9;
+}
+
 .object_filters_item_bottom {
   margin-top: auto;
 }
@@ -1751,7 +1796,7 @@ h2 {
   width: 0.5px;
   height: 100%;
   left: 0;
-  background: #E9E9E9;
+  background: #e9e9e9;
 }
 .object_filters_item_line:nth-child(4) {
   left: unset;
@@ -1761,16 +1806,14 @@ h2 {
   position: absolute;
   width: 130%;
   height: 0.5px;
-  background: #E9E9E9;
+  background: #e9e9e9;
   top: 60px;
 }
 .object_filters_item_line_top:nth-child(6) {
   top: unset;
   bottom: 60px;
 }
-.object_filters_item:first-child, .object_filters_item:nth-child(2), .object_filters_item:nth-child(3) {
-  padding-bottom: unset;
-}
+
 .object_sorting_mobile {
   display: none;
   flex-direction: column;
@@ -1779,6 +1822,11 @@ h2 {
 .object_sorting_mobile_item {
   display: flex;
   gap: 30px;
+}
+
+.object_floor_item.active {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 @media screen and (max-width: 1100px) {
@@ -1896,13 +1944,7 @@ h2 {
     max-width: unset;
   }
   .object_filters_items {
-    grid-template-columns: repeat(2, 1fr)
-  }
-  .object_filters_item:nth-child(4) {
-    padding-bottom: unset;
-  }
-  .object_filters_item .object_filters_item_line_top:nth-child(6) {
-    display: none;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 860px) {
@@ -2182,7 +2224,9 @@ h2 {
   .object_sorting_subtitle {
     text-align: end;
   }
-  .object_sorting_mobile_item, .object_sorting_range, .range_item_object {
+  .object_sorting_mobile_item,
+  .object_sorting_range,
+  .range_item_object {
     width: 100%;
   }
   .object_filters_item_bottom p {
@@ -2190,9 +2234,34 @@ h2 {
   }
   .object_filters_item {
     padding: 80px 30px;
+    padding-bottom: 0;
   }
   .object_filters_items {
     padding: 0 40px;
+  }
+  .header_pagination {
+    left: 40px;
+    bottom: 40px;
+  }
+  .header_pag {
+    right: 40px;
+    bottom: 40px;
+  }
+  .object_about_left {
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .object_filters_items {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .object_filters_item {
+    width: 50%;
+  }
+  .range_slider input[type="range"] {
+    bottom: 1px;
   }
 }
 @media screen and (max-width: 480px) {

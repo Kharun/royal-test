@@ -4,7 +4,7 @@ const nav = $(".nav_object");
 const topObjectsNavs = $(".categories_top_item");
 
 let lastScrollTop = 0;
-const threshold = 1000;
+const threshold = 700;
 
 langBtn.click(function () {
   $(this).toggleClass("active");
@@ -105,60 +105,6 @@ maxRange.on("input", () => {
 });
 
 gsap.registerPlugin(ScrollTrigger);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const header = $(".header_main");
-  const headerRoyal = $(".header_royal");
-  const headerSwiperContent = $(".header_swiper_content");
-  const headerPagination = $(".header_pagination");
-  const headerPag = $(".header_pag");
-  const headerBg = $(".header_swiper_bg");
-
-  gsap.set([headerSwiperContent, headerPagination, headerPag], { opacity: 0 });
-  gsap.set(headerBg, { scale: 1.4 });
-  gsap.set(headerRoyal, {
-    width: "100%",
-    top: "50%",
-  });
-
-  ScrollTrigger.create({
-    trigger: header,
-    start: "top top",
-    end: "+=1000",
-    pin: true,
-    scrub: 1,
-    onUpdate: (self) => {
-      const progress = self.progress;
-
-      gsap.to(headerRoyal, {
-        scale: 1 - progress * 0.5,
-        maxWidth: `${100 - (100 - 6) * progress}%`,
-        top: `${50 - 43 * progress}%`,
-        ease: "power2.out",
-      });
-
-      if (progress > 0.7) {
-        gsap.to([headerSwiperContent, headerPagination, headerPag], {
-          opacity: 1,
-          duration: 0.5,
-        });
-      } else {
-        gsap.to([headerSwiperContent, headerPagination, headerPag], {
-          opacity: 0,
-          duration: 0.5,
-        });
-      }
-
-      gsap.to(headerBg, {
-        scale: 1.4 - progress * 0.4,
-        ease: "power2.out",
-      });
-    },
-    onLeave: () => {
-      gsap.to(header, { position: "relative" });
-    },
-  });
-});
 
 $(document).ready(function () {
   $(".categories_statuses .categories_status").on("click", function () {
@@ -351,253 +297,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  gsap.from(".about_top_text", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.3,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".about_top_text",
-      start: "top 80%",
-    },
-  });
-
-  gsap.from(".about_left", {
-    x: -100,
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.5,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".about_top_text",
-      start: "top 80%",
-    },
-  });
-
-  gsap.from(".about_right", {
-    x: 100,
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.7,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".about_top_text",
-      start: "top 80%",
-    },
-  });
-
-  gsap.from(".about_left img, .about_right_img", {
-    scale: 1.1,
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-    stagger: 0.2,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".about_top_text",
-      start: "top 80%",
-    },
-  });
-
-  gsap.from(".read", {
-    y: 30,
-    opacity: 0,
-    duration: 1,
-    delay: 1.4,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".about_top_text",
-      start: "top 80%",
-    },
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".abous_us_number",
-      start: "top 60%",
-      toggleActions: "play none none none",
-    },
-  });
-
-  tl.from(".abous_us_number_texts p", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-  });
-
-  tl.from(
-    ".abous_us_number_item",
-    {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.3,
-      ease: "power3.out",
-    },
-    "-=0.5"
-  );
-
-  const numberItems = document.querySelectorAll(".abous_us_number_item h2");
-  numberItems.forEach((item) => {
-    const endValue = parseInt(item.textContent.replace(/\D/g, "")) || 0;
-    const plus = item.textContent.includes("+") ? "+" : "";
-
-    gsap.fromTo(
-      item,
-      { innerText: 0 },
-      {
-        innerText: endValue,
-        duration: 2,
-        ease: "power1.out",
-        snap: { innerText: 1 },
-        onUpdate: function () {
-          item.innerText = Math.floor(this.targets()[0].innerText) + plus;
-        },
-        scrollTrigger: {
-          trigger: item,
-          start: "top 75%",
-        },
-      }
-    );
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.from(".ponorama_content h2", {
-    y: 80,
-    opacity: 0,
-    duration: 1.5,
-    ease: "back.out(1.7)",
-    scrollTrigger: {
-      trigger: ".ponorama",
-      start: "top 70%",
-    },
-  });
-
-  gsap.from(".ponorama_cursor", {
-    opacity: 0,
-    duration: 0.8,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".ponorama",
-      start: "top 90%",
-    },
-  });
-
-  gsap.to(".ring1", {
-    scale: 1.2,
-    opacity: 0,
-    duration: 1.5,
-    repeat: -1,
-    ease: "power1.out",
-    delay: 0,
-  });
-
-  gsap.to(".ring2", {
-    scale: 1.2,
-    opacity: 0,
-    duration: 1.5,
-    repeat: -1,
-    ease: "power1.out",
-    delay: 0.5,
-  });
-
-  gsap.to(".ring3", {
-    scale: 1.2,
-    opacity: 0,
-    duration: 1.5,
-    repeat: -1,
-    ease: "power1.out",
-    delay: 1,
-  });
-
-  const cursor = document.querySelector(".ponorama_cursor");
-
-  document.addEventListener("mousemove", (e) => {
-    gsap.to(cursor, {
-      x: e.clientX,
-      y: e.clientY,
-      duration: 0.2,
-      ease: "power3.out",
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.from(".news_top_title h2", {
-    x: -100,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".news",
-      start: "top 70%",
-    },
-  });
-
-  gsap.from(".news_top_title p", {
-    x: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".news",
-      start: "top 70%",
-    },
-  });
-
-  gsap.from(".news_top_text p", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    delay: 0.5,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".news",
-      start: "top 60%",
-    },
-  });
-
-  gsap.from(".news_left", {
-    y: 80,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".news_block",
-      start: "top 75%",
-    },
-  });
-
-  gsap.from(".news_item", {
-    y: 80,
-    opacity: 0,
-    duration: 1.2,
-    stagger: 0.3,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".news_block",
-      start: "top 75%",
-    },
-  });
-
-  gsap.from(".news_bottom .read", {
-    x: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".news_bottom",
-      start: "top 85%",
-    },
-  });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".contacts_title", {
     y: 80,
@@ -632,22 +331,106 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 75%",
     },
   });
-
-  gsap.to(".abous_us_number", {
-    backgroundPosition: "center 40%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".abous_us_number",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.to(".object_bg", {
-    xPercent: -50,
-    ease: "none",
-    repeat: -1,
-    duration: 20,
-  });
 });
+
+$(document).ready(function () {
+  let selectedFloors = [];
+  let selectedRooms = [];
+  let minArea = 10;
+  let maxArea = 300;
+
+  function filterObjects() {
+    $(".object_filters_item")
+      .hide()
+      .filter(function () {
+        let floor = parseInt($(this).data("floor"));
+        let rooms = parseInt($(this).data("rooms"));
+        let area = parseFloat($(this).data("area"));
+
+        let floorMatch = selectedFloors.length ? selectedFloors.includes(floor) : true;
+        let roomsMatch = selectedRooms.length ? selectedRooms.includes(rooms) : true;
+        let areaMatch = area >= minArea && area <= maxArea;
+
+        return floorMatch && roomsMatch && areaMatch;
+      })
+      .show();
+  }
+
+  $(".object_sorting_item_floor .object_floor_item").on("click", function () {
+    let value = parseInt($(this).text());
+    $(this).toggleClass("active");
+
+    if ($(this).closest(".object_sorting_item").find("p").text().includes("Этаж")) {
+      if (selectedFloors.includes(value)) {
+        selectedFloors = selectedFloors.filter((v) => v !== value);
+      } else {
+        selectedFloors.push(value);
+      }
+    } else if (
+      $(this).closest(".object_sorting_item").find("p").text().includes("Кол-во комнат") ||
+      $(this).closest(".object_sorting_item").find("p").text().includes("Кол-во комнат")
+    ) {
+      if (selectedRooms.includes(value)) {
+        selectedRooms = selectedRooms.filter((v) => v !== value);
+      } else {
+        selectedRooms.push(value);
+      }
+    }
+
+    filterObjects();
+  });
+
+  $(".object_sorting_range input[type='range']").on("input", function () {
+    let parent = $(this).closest(".object_sorting_range");
+    let minInput = parent.find("input#min").val();
+    let maxInput = parent.find("input#max").val();
+
+    if (parseInt(minInput) > parseInt(maxInput)) {
+      [minInput, maxInput] = [maxInput, minInput];
+    }
+
+    parent.find("#min-value-object").text(minInput);
+    parent.find("#max-value-object").text(maxInput);
+
+    minArea = parseInt(minInput);
+    maxArea = parseInt(maxInput);
+
+    filterObjects();
+  });
+
+  $(".object_sorting_clear").on("click", function () {
+    selectedFloors = [];
+    selectedRooms = [];
+    minArea = 1;
+    maxArea = 300;
+
+    $(".object_floor_item").removeClass("active");
+    $(".object_sorting_range input#min").val(1);
+    $(".object_sorting_range input#max").val(300);
+    $(".object_sorting_range #min-value-object").text(1);
+    $(".object_sorting_range #max-value-object").text(300);
+
+    filterObjects();
+  });
+
+  filterObjects();
+});
+
+// $(document).ready(function () {
+//   const initialText = $(".object_about_right p").text();
+//   const initialTitle = $(".object_about_right h2").text();
+
+//   $(".object_about_item").hover(
+//     function () {
+//       const h2Text = $(this).find("h2").text();
+//       const pText = $(this).find("p").text();
+
+//       $(".object_about_right h2").text(h2Text);
+//       $(".object_about_right p").text(pText);
+//     },
+//     function () {
+//       $(".object_about_right h2").text(initialTitle);
+//       $(".object_about_right p").text(initialText);
+//     }
+//   );
+// });
