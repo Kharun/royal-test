@@ -3,6 +3,18 @@ const langContent = $(".nav_lang_content");
 const nav = $(".nav_object");
 const topObjectsNavs = $(".categories_top_item");
 
+const lenis = new Lenis({
+  duration: 1.7,
+  smooth: true,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 let lastScrollTop = 0;
 const threshold = 700;
 
