@@ -117,34 +117,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.from(".header_object h2", {
-    y: 80,
-    opacity: 0,
-    scale: 0.95,
-    duration: 1.5,
-    ease: "power3.out",
-  });
+// document.addEventListener("DOMContentLoaded", () => {
+//   gsap.from(".header_object h2", {
+//     y: 80,
+//     opacity: 0,
+//     scale: 0.95,
+//     duration: 1.5,
+//     ease: "power3.out",
+//   });
 
-  gsap.from(".header_object p", {
-    y: 60,
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.5,
-    ease: "power3.out",
-  });
+//   gsap.from(".header_object p", {
+//     y: 60,
+//     opacity: 0,
+//     duration: 1.2,
+//     delay: 0.5,
+//     ease: "power3.out",
+//   });
 
-  gsap.to(".header_object", {
-    backgroundPosition: "center 50%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".header_object",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-});
+//   gsap.to(".header_object", {
+//     backgroundPosition: "center 50%",
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".header_object",
+//       start: "top top",
+//       end: "bottom top",
+//       scrub: true,
+//     },
+//   });
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".object_gallery_title", {
@@ -288,5 +288,51 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".object_filters_items",
       start: "top 80%",
     },
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector(".header_object_title");
+  const titleLetters = title.textContent.split("");
+
+  title.innerHTML = titleLetters
+    .map((letter) =>
+      letter === " " ? `<span class="letter-title space"> </span>` : `<span class="letter-title">${letter}</span>`
+    )
+    .join("");
+
+  gsap.from(".letter-title", {
+    opacity: 0,
+    y: 20,
+    scale: 0.3,
+    duration: 0.8,
+    stagger: {
+      each: 0.3,
+      from: "random",
+    },
+    ease: "power2.out",
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const text = document.querySelector(".header_object_text");
+  const letters = text.textContent.split("");
+
+  text.innerHTML = letters
+    .map((letter) => {
+      return letter === " " ? `<span class="letter space"> </span>` : `<span class="letter">${letter}</span>`;
+    })
+    .join("");
+
+  gsap.from(".letter", {
+    opacity: 0,
+    y: 20,
+    scale: 0.3,
+    duration: 0.8,
+    stagger: {
+      each: 0.03,
+      from: "random",
+    },
+    ease: "power2.out",
   });
 });

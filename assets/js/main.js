@@ -4,7 +4,7 @@ const nav = $(".nav_object");
 const topObjectsNavs = $(".categories_top_item");
 
 const lenis = new Lenis({
-  duration: 1.7,
+  duration: 1.9,
   smooth: true,
 });
 
@@ -42,8 +42,17 @@ $(window).on("scroll", function () {
   lastScrollTop = currentScroll;
 });
 
+$(window).on("scroll", function () {
+  if ($(this).scrollTop() >= 1000) {
+    $(".nav_main").addClass("active");
+  } else {
+    $(".nav_main").removeClass("active");
+  }
+});
+
 $(".nav_theme").click(function () {
   document.body.classList.toggle("dark");
+  $(this).toggleClass("active");
 });
 $(".burger_menu").click(function () {
   $(".menu").toggleClass("active");
@@ -70,7 +79,21 @@ function setupCustomCursor(targetSelector, cursorSelector) {
   });
 }
 
-setupCustomCursor(".reviews_content", ".custom-cursor");
+$(document).ready(function () {
+  gsap.utils.toArray(".menu_link").forEach((link) => {
+    const text = link.querySelector("span");
+
+    link.addEventListener("mousemove", () => {
+      gsap.to(text, { y: "-100%", duration: 0.4, ease: "power2.out" });
+    });
+
+    link.addEventListener("mouseleave", () => {
+      gsap.to(text, { y: "0%", duration: 0.4, ease: "power2.in" });
+    });
+  });
+});
+
+// setupCustomCursor(".reviews_content", ".custom-cursor");
 setupCustomCursor(".ponorama", ".ponorama_cursor");
 setupCustomCursor(".news_left", ".news_cursor");
 

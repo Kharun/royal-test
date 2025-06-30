@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.from(".header_company h2", {
-    y: 80,
-    opacity: 0,
-    scale: 0.95,
-    duration: 1.5,
-    ease: "power3.out",
-  });
+// document.addEventListener("DOMContentLoaded", () => {
+//   gsap.from(".header_company h2", {
+//     y: 80,
+//     opacity: 0,
+//     scale: 0.95,
+//     duration: 1.5,
+//     ease: "power3.out",
+//   });
 
-  gsap.to(".header_company", {
-    backgroundPosition: "center 50%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".header_object",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-});
+//   gsap.to(".header_company", {
+//     backgroundPosition: "center 50%",
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".header_object",
+//       start: "top top",
+//       end: "bottom top",
+//       scrub: true,
+//     },
+//   });
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.from(".company_info_top_item h2", {
@@ -157,28 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  gsap.to(".company_center img:first-child", {
-    y: -50,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".company_center",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.to(".company_center img:last-child", {
-    y: 50,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".company_center",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
   gsap.from(".partners_title", {
     y: 60,
     opacity: 0,
@@ -199,5 +177,68 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".company_info_top_item",
       start: "top 80%",
     },
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    ScrollTrigger.create({
+      trigger: ".company_center",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      scrub: true,
+    });
+
+    gsap.fromTo(
+      ".company_img_right",
+      { y: "-150%" },
+      {
+        y: "190%",
+        scrollTrigger: {
+          trigger: ".company_center",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".company_img_left",
+      { y: "150%" },
+      {
+        y: "-190%",
+        scrollTrigger: {
+          trigger: ".company_center",
+          start: "top top",
+          end: "+=100%",
+          scrub: true,
+        },
+      }
+    );
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const text = document.querySelector(".header_text");
+  const letters = text.textContent.split("");
+
+  text.innerHTML = letters
+    .map((letter) => {
+      return letter === " " ? `<span class="letter space"> </span>` : `<span class="letter">${letter}</span>`;
+    })
+    .join("");
+
+  gsap.from(".letter", {
+    opacity: 0,
+    y: 20,
+    scale: 0.3,
+    duration: 0.3,
+    stagger: {
+      each: 0.03,
+      from: "random",
+    },
+    ease: "power2.out",
   });
 });
