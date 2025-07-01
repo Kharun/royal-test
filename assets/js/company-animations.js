@@ -241,4 +241,15 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     ease: "power2.out",
   });
+
+  gsap.to(".company_team_bg", {
+    y: -200,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".company_team",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
 });
