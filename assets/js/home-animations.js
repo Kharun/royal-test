@@ -300,3 +300,21 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+document.querySelectorAll('.menu_link').forEach(link => {
+  const textTop = link.querySelector('.text-top');
+  const textBottom = link.querySelector('.text-bottom');
+  
+  link.addEventListener('mouseenter', () => {
+    gsap.to(textTop, { y: '-100%', duration: 0.3, ease: 'power2.out' });
+    gsap.fromTo(textBottom, 
+      { y: '100%' }, 
+      { y: '0%', duration: 0.3, ease: 'power2.out' }
+    );
+  });
+  
+  link.addEventListener('mouseleave', () => {
+    gsap.to(textTop, { y: '0%', duration: 0.3, ease: 'power2.out' });
+    gsap.to(textBottom, { y: '100%', duration: 0.3, ease: 'power2.out' });
+  });
+});

@@ -406,14 +406,33 @@ h2 {
   gap: 25px;
   width: 50%;
 }
+
 .menu_link {
   font-family: "Florentia";
   font-weight: 300;
   font-size: 53px;
   text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
 }
-.menu_link::before {
-  background: var(--black) !important;
+
+.text-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.text-top, .text-bottom {
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.text-bottom {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 .menu_content_bg {
   background: url("../img/menu_content_bg.png") center/cover no-repeat;
