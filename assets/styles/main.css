@@ -418,6 +418,9 @@ h2 {
   display: inline-block;
   position: relative;
 }
+.menu_link::before {
+  position: unset;
+}
 
 .text-wrapper {
   display: inline-block;
@@ -2322,10 +2325,6 @@ h2 {
 .company_team_item {
   display: flex;
 }
-.company_team_item_img {
-  width: 332px !important;
-  object-fit: cover !important;
-}
 .company_team_bg {
   position: absolute;
   width: 100%;
@@ -2368,6 +2367,12 @@ h2 {
 .company_team_right,
 .company_team_left {
   cursor: pointer;
+}
+.company_team_content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
 /* partners */
