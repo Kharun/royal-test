@@ -253,3 +253,65 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+// function splitTextToSpans(element) {
+//   const text = element.textContent;
+//   const chars = text.split("");
+//   element.innerHTML = "";
+//   chars.forEach((char) => {
+//     const span = document.createElement("span");
+//     span.textContent = char;
+//     element.appendChild(span);
+//   });
+// }
+
+let swiperTeam = new Swiper(".company_team_swiper", {
+  effect: "fade",
+  fadeEffect: { crossFade: true },
+  navigation: {
+    nextEl: ".company_team_right",
+    prevEl: ".company_team_left",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  speed: 500,
+});
+
+// document.querySelectorAll(".company_team_info h2, .company_team_info p").forEach((el) => {
+//   splitTextToSpans(el);
+// });
+// document.querySelectorAll(".company_team_info span").forEach((span) => {
+//   span.style.opacity = 0;
+// });
+
+// function animateIn(slide) {
+//   const chars = slide.querySelectorAll("span");
+//   gsap.fromTo(
+//     chars,
+//     { opacity: 0, y: 20 },
+//     { opacity: 1, y: 0, stagger: { each: 0.01, from: "random" }, duration: 0.1, ease: "power2.out" }
+//   );
+// }
+
+// function animateOut(slide) {
+//   const chars = slide.querySelectorAll("span");
+//   return gsap.to(chars, {
+//     opacity: 0,
+//     y: -20,
+//     stagger: { each: 0.02, from: "random" },
+//     duration: 0.4,
+//     ease: "power2.in",
+//   });
+// }
+
+// animateIn(swiperTeam.slides[swiperTeam.activeIndex]);
+
+// swiperTeam.on("slideChangeTransitionStart", function () {
+//   animateOut(swiperTeam.slides[swiperTeam.previousIndex]);
+// });
+
+// swiperTeam.on("slideChangeTransitionEnd", function () {
+//   animateIn(swiperTeam.slides[swiperTeam.activeIndex]);
+// });
