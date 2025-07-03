@@ -3,6 +3,11 @@ const langContent = $(".nav_lang_content");
 const nav = $(".nav_object");
 const topObjectsNavs = $(".categories_top_item");
 
+$(".hamburger").on("click", function () {
+  $(".hamburger").toggleClass("is-active");
+  $(".menu").toggleClass("active");
+});
+
 const lenis = new Lenis({
   duration: 1.9,
   smooth: true,
@@ -35,8 +40,10 @@ $(window).on("scroll", function () {
   if (currentScroll > threshold) {
     nav.toggleClass("active", currentScroll < lastScrollTop);
     nav.toggleClass("hide", currentScroll > lastScrollTop);
+    $(".hamburger_second").toggleClass("menu_hamburger", currentScroll < lastScrollTop);
   } else {
     nav.removeClass("active hide");
+    $(".hamburger_second").removeClass("menu_hamburger", currentScroll < lastScrollTop);
   }
 
   lastScrollTop = currentScroll;
@@ -170,6 +177,8 @@ $(document).ready(function () {
     const minFloors = parseInt($("#min").val());
     const maxFloors = parseInt($("#max").val());
 
+    let visibleItems = 0;
+
     $(".categories_item").each(function () {
       const $item = $(this);
       const itemStatus = $item.data("status");
@@ -184,10 +193,19 @@ $(document).ready(function () {
 
       if (statusMatch && typeMatch && locationMatch && floorsMatch) {
         $item.stop(true, true).fadeIn(300);
+        visibleItems++;
       } else {
         $item.stop(true, true).fadeOut(300);
       }
     });
+
+    if (visibleItems === 0) {
+      $(".categories_no_data").addClass("active");
+      $(".categories_bottom").addClass("hidden");
+    } else {
+      $(".categories_no_data").removeClass("active");
+      $(".categories_bottom").removeClass("hidden");
+    }
   }
 
   const minSlider = document.getElementById("min");

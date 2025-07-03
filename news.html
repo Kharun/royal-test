@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/hamburgers.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -54,13 +55,11 @@
           </a>
           <div class="nav_right">
             <a href="" class="nav_objects">Квартиры и объекты</a>
-            <div class="burger_menu">
-              <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line y1="0.5" x2="10" y2="0.5" stroke="currentColor" />
-                <line y1="6.5" x2="21" y2="6.5" stroke="currentColor" />
-                <line x1="11" y1="12.5" x2="21" y2="12.5" stroke="currentColor" />
-              </svg>
-            </div>
+            <button class="hamburger hamburger--spin" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner menu_hamburger"></span>
+              </span>
+            </button>
           </div>
         </div>
       </nav>
@@ -158,12 +157,42 @@
       </div>
       <div class="menu_content">
         <div class="menu_links">
-          <a href="./index.html" class="menu_link">Главная /</a>
-          <a href="./company.html" class="menu_link">О компании</a>
-          <a href="./object.html" class="menu_link">Квартиры и объекты</a>
-          <a href="./news.html" class="menu_link">новости и вакансии</a>
-          <a href="./news.html" class="menu_link">отзывы /</a>
-          <a href="" class="menu_link">контакты</a>
+          <a href="./index.html" class="menu_link">
+            <span class="text-wrapper">
+              <span class="text-top">Главная /</span>
+              <span class="text-bottom">Главная /</span>
+            </span>
+          </a>
+          <a href="./company.html" class="menu_link">
+            <span class="text-wrapper">
+              <span class="text-top">О компании</span>
+              <span class="text-bottom">О компании</span>
+            </span>
+          </a>
+          <a href="./object.html" class="menu_link">
+            <span class="text-wrapper">
+              <span class="text-top">Квартиры и объекты</span>
+              <span class="text-bottom">Квартиры и объекты</span>
+            </span>
+          </a>
+          <a href="./news.html" class="menu_link">
+            <span class="text-wrapper">
+              <span class="text-top">новости и вакансии</span>
+              <span class="text-bottom">новости и вакансии</span>
+            </span>
+          </a>
+          <a href="./news.html" class="menu_link">
+            <span class="text-wrapper">
+              <span class="text-top">отзывы /</span>
+              <span class="text-bottom">отзывы /</span>
+            </span>
+          </a>
+          <a href="" class="menu_link">
+            <span class="text-wrapper">
+              <span class="text-top">контакты</span>
+              <span class="text-bottom">контакты</span>
+            </span>
+          </a>
         </div>
         <div class="menu_content_bg">
           <h2><span>R</span>oyal — ваш надёжный партнёр в мире строительства.</h2>

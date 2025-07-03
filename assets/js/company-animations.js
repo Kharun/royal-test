@@ -254,16 +254,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// function splitTextToSpans(element) {
-//   const text = element.textContent;
-//   const chars = text.split("");
-//   element.innerHTML = "";
-//   chars.forEach((char) => {
-//     const span = document.createElement("span");
-//     span.textContent = char;
-//     element.appendChild(span);
-//   });
-// }
+const activeAnimations = new Map();
+
+function splitTextToSpans(element) {
+  const text = element.textContent;
+  const chars = text.split("");
+  element.innerHTML = "";
+  chars.forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    element.appendChild(span);
+  });
+}
 
 let swiperTeam = new Swiper(".company_team_swiper", {
   effect: "fade",
@@ -279,39 +281,63 @@ let swiperTeam = new Swiper(".company_team_swiper", {
   speed: 500,
 });
 
-// document.querySelectorAll(".company_team_info h2, .company_team_info p").forEach((el) => {
-//   splitTextToSpans(el);
-// });
-// document.querySelectorAll(".company_team_info span").forEach((span) => {
-//   span.style.opacity = 0;
-// });
+document.querySelectorAll(".company_team_info h2, .company_team_info p").forEach((el) => {
+  splitTextToSpans(el);
+});
 
-// function animateIn(slide) {
-//   const chars = slide.querySelectorAll("span");
-//   gsap.fromTo(
-//     chars,
-//     { opacity: 0, y: 20 },
-//     { opacity: 1, y: 0, stagger: { each: 0.01, from: "random" }, duration: 0.1, ease: "power2.out" }
-//   );
-// }
+document.querySelectorAll(".company_team_info span").forEach((span) => {
+  span.style.opacity = 0;
+});
 
-// function animateOut(slide) {
-//   const chars = slide.querySelectorAll("span");
-//   return gsap.to(chars, {
-//     opacity: 0,
-//     y: -20,
-//     stagger: { each: 0.02, from: "random" },
-//     duration: 0.4,
-//     ease: "power2.in",
-//   });
-// }
+function resetSpans(slide) {
+  const chars = slide.querySelectorAll("span");
+  gsap.killTweensOf(chars);
+  gsap.set(chars, { opacity: 0, y: 20 });
+}
 
-// animateIn(swiperTeam.slides[swiperTeam.activeIndex]);
+function animateIn(slide) {
+  const chars = slide.querySelectorAll("span");
+  gsap.killTweensOf(chars);
+  gsap.set(chars, { opacity: 0, y: 20 });
 
-// swiperTeam.on("slideChangeTransitionStart", function () {
-//   animateOut(swiperTeam.slides[swiperTeam.previousIndex]);
-// });
+  const tl = gsap.fromTo(
+    chars,
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: { each: 0.01, from: "random" },
+      duration: 0.1,
+      ease: "power2.out",
+    }
+  );
 
-// swiperTeam.on("slideChangeTransitionEnd", function () {
-//   animateIn(swiperTeam.slides[swiperTeam.activeIndex]);
-// });
+  activeAnimations.set(slide, tl);
+}
+
+function animateOut(slide) {
+  const chars = slide.querySelectorAll("span");
+  gsap.killTweensOf(chars);
+
+  const tl = gsap.to(chars, {
+    opacity: 0,
+    y: -20,
+    stagger: { each: 0.02, from: "random" },
+    duration: 0.4,
+    ease: "power2.in",
+  });
+
+  activeAnimations.set(slide, tl);
+}
+
+animateIn(swiperTeam.slides[swiperTeam.activeIndex]);
+
+swiperTeam.on("slideChangeTransitionStart", function () {
+  animateOut(swiperTeam.slides[swiperTeam.previousIndex]);
+
+  resetSpans(swiperTeam.slides[swiperTeam.activeIndex]);
+});
+
+swiperTeam.on("slideChangeTransitionEnd", function () {
+  animateIn(swiperTeam.slides[swiperTeam.activeIndex]);
+});
