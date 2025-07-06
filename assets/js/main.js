@@ -100,6 +100,34 @@ $(document).ready(function () {
   });
 });
 
+// custom select
+$(document).ready(function () {
+  $(".custom_select_selected").on("click", function () {
+    $(this).next(".custom_select_content").stop(true, true).slideToggle(300);
+    $(this).toggleClass("open");
+  });
+
+  $(".custom_select_item").on("click", function () {
+    var selectedText = $(this).text();
+    var select = $(this).closest(".custom_select");
+
+    select.find(".custom_select_selected").contents().first().replaceWith(selectedText);
+
+    select.find(".custom_select_item").removeClass("active");
+    $(this).addClass("active");
+
+    select.find(".custom_select_content").stop(true, true).slideUp(150);
+    select.find(".custom_select_selected").removeClass("open");
+  });
+
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".custom_select").length) {
+      $(".custom_select_content").stop(true, true).slideUp(150);
+      $(".custom_select_selected").removeClass("open");
+    }
+  });
+});
+
 // setupCustomCursor(".reviews_content", ".custom-cursor");
 setupCustomCursor(".ponorama", ".ponorama_cursor");
 setupCustomCursor(".news_left", ".news_cursor");

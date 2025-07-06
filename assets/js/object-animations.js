@@ -336,3 +336,23 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".object",
+          start: "top top",
+          end: "+=250%",
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+        },
+      })
+      .to(".object_img", {
+        scale: 2.5,
+        ease: "none",
+      });
+  }
+});

@@ -522,11 +522,25 @@
             <div class="categories_status" data-status="stage_complete">На стадии завершения</div>
           </div>
           <div class="categories_sort gsap-fade-down">
-            <select name="" class="categories_select" id="">
-              <option value="" disabled selected>Выберите локацию</option>
-              <option value="">Бишкек</option>
-              <option value="">Ош</option>
-            </select>
+            <div class="custom_select">
+              <div class="custom_select_selected">
+                Выберите локацию
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19 8.5L12 15.5L5 8.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="custom_select_content">
+                <div class="custom_select_item">1 локация</div>
+                <div class="custom_select_item">2 локация</div>
+                <div class="custom_select_item">3 локация</div>
+              </div>
+            </div>
             <div class="range_slider">
               <div class="values">
                 <div class="range_item"><span id="min-value">1</span> этажей</div>
