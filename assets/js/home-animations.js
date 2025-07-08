@@ -301,20 +301,140 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelectorAll('.menu_link').forEach(link => {
-  const textTop = link.querySelector('.text-top');
-  const textBottom = link.querySelector('.text-bottom');
-  
-  link.addEventListener('mouseenter', () => {
-    gsap.to(textTop, { y: '-100%', duration: 0.3, ease: 'power2.out' });
-    gsap.fromTo(textBottom, 
-      { y: '100%' }, 
-      { y: '0%', duration: 0.3, ease: 'power2.out' }
-    );
+document.querySelectorAll(".menu_link").forEach((link) => {
+  const textTop = link.querySelector(".text-top");
+  const textBottom = link.querySelector(".text-bottom");
+
+  link.addEventListener("mouseenter", () => {
+    gsap.to(textTop, { y: "-100%", duration: 0.3, ease: "power2.out" });
+    gsap.fromTo(textBottom, { y: "100%" }, { y: "0%", duration: 0.3, ease: "power2.out" });
   });
-  
-  link.addEventListener('mouseleave', () => {
-    gsap.to(textTop, { y: '0%', duration: 0.3, ease: 'power2.out' });
-    gsap.to(textBottom, { y: '100%', duration: 0.3, ease: 'power2.out' });
+
+  link.addEventListener("mouseleave", () => {
+    gsap.to(textTop, { y: "0%", duration: 0.3, ease: "power2.out" });
+    gsap.to(textBottom, { y: "100%", duration: 0.3, ease: "power2.out" });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.to(".about_us_img img", {
+    y: -100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".about_right_img", {
+    y: -100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".reviews_item_image img", {
+    y: -100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".reviews",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".reviews_item_info", {
+    y: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".reviews",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".ponorama_bg", {
+    y: -200,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".ponorama",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".about_texts", {
+    y: -50,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".categories_title, .categories_name ", {
+    y: -50,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".categories",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".abous_us_number_texts p", {
+    y: -50,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".abous_us_number",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".abous_us_number_items", {
+    y: -50,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".abous_us_number",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".news_top_title", {
+    y: -70,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".news",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to("..news_top_text p", {
+    y: -80,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".news",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
   });
 });

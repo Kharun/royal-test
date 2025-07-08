@@ -8,6 +8,10 @@ $(".hamburger").on("click", function () {
   $(".menu").toggleClass("active");
 });
 
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
+
 const lenis = new Lenis({
   duration: 1.9,
   smooth: true,
@@ -63,6 +67,40 @@ $(".nav_theme").click(function () {
 });
 $(".burger_menu").click(function () {
   $(".menu").toggleClass("active");
+});
+
+// page transition
+window.addEventListener("load", () => {
+  const transition = document.querySelector(".page_transition");
+  const lines = document.querySelectorAll(".page_transition_line");
+
+  lines.forEach((line) => {
+    line.classList.remove("active");
+  });
+
+  setTimeout(() => {
+    transition.classList.add("hidden");
+  }, 500);
+});
+
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    if (this.classList.contains("link_none")) return;
+
+    e.preventDefault();
+    const url = this.getAttribute("href");
+    const transition = document.querySelector(".page_transition");
+    const lines = document.querySelectorAll(".page_transition_line");
+
+    transition.classList.remove("hidden");
+    lines.forEach((line) => {
+      line.classList.add("active");
+    });
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 1000);
+  });
 });
 
 // Cursor Custom

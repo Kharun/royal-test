@@ -680,9 +680,34 @@ h2 {
 .about_us.mobile {
   display: none;
 }
-.about_us img {
+/* .about_us img {
   width: 100%;
   max-width: 242px;
+} */
+.about_us_img {
+  position: relative;
+  width: 240px;
+  height: 310px;
+  overflow: hidden;
+}
+.about_us_img img {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.about_right_img_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.about_right_img {
+  position: absolute;
+  width: 100%;
+  height: 120%;
 }
 .about_us h2 {
   font-weight: 300;
@@ -768,6 +793,7 @@ h2 {
 .about_right {
   max-width: 60%;
   display: flex;
+  width: 100%;
   img {
     width: 100%;
   }
@@ -1201,7 +1227,6 @@ h2 {
   justify-content: flex-end;
 }
 .ponorama {
-  background: url("../img/ponorama_bg.png") center/cover no-repeat;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -1209,6 +1234,15 @@ h2 {
   align-items: flex-end;
   padding-bottom: 50px;
   cursor: none;
+  position: relative;
+}
+.ponorama_bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
 }
 .ponorama_content h2 {
   font-weight: 400;
@@ -2679,6 +2713,27 @@ h2 {
 }
 .custom_select_item.active {
   background: #f7f7f7;
+}
+.page_transition {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.page_transition.hidden {
+  visibility: hidden;
+}
+.page_transition_line {
+  width: 0%;
+  background: #faf9f6;
+  transition: 0.7s ease-in-out;
+}
+.page_transition_line.active {
+  width: 100%;
 }
 
 @media screen and (max-width: 1100px) {

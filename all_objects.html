@@ -10,8 +10,8 @@
     <title>Royal Test</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="nav nav_object">
+    <header class="header header_second">
+      <nav class="nav nav_object nav_object_details">
         <div class="nav_content">
           <div class="nav_left">
             <div class="nav_theme">
@@ -57,17 +57,12 @@
             <a href="./all_objects.html" class="nav_objects">Квартиры и объекты</a>
             <button class="hamburger hamburger--spin" type="button">
               <span class="hamburger-box">
-                <span class="hamburger-inner hamburger_second"></span>
+                <span class="hamburger-inner menu_hamburger"></span>
               </span>
             </button>
           </div>
         </div>
       </nav>
-
-      <div class="header_object">
-        <h2 class="header_object_title">Cambridge</h2>
-        <p class="header_object_text">Пространство, в котором сочетаются английский характер и надёжность Royal.</p>
-      </div>
     </header>
 
     <div class="page_transition">
@@ -125,12 +120,13 @@
             <i class="icon-logo"></i>
           </a>
           <div class="nav_right">
-            <a href="./all_objects.html" class="nav_objects">Квартиры и объекты</a>
-            <button class="hamburger hamburger--spin" type="button">
-              <span class="hamburger-box">
-                <span class="hamburger-inner menu_hamburger"></span>
-              </span>
-            </button>
+            <a href="" class="nav_objects mobile">Квартиры и объекты</a>
+            <div class="burger_menu">
+              <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.669189" y1="16.6251" x2="17.6692" y2="1.62508" stroke="currentColor" />
+                <line x1="1.35355" y1="0.646447" x2="17.3536" y2="16.6464" stroke="currentColor" />
+              </svg>
+            </div>
           </div>
         </div>
         <div class="menu_nav_top">
@@ -254,340 +250,102 @@
     </div>
 
     <main class="main">
-      <section class="object_about">
-        <div class="object_about_content container">
-          <div class="object_about_info">
-            <div class="object_about_left">
-              <h2 class="object_about_title">
-                <span>Cambridge</span> — элегантная классика, сочетающая стиль и функциональность.
-              </h2>
-              <p class="object_about_text">
-                Комплекс Cambridge сочетает в себе утонченную британскую эстетику с продуманной инфраструктурой. Фасады
-                выполнены в стиле английской неоклассики, что придаёт зданию статусность и солидность. Внутреннее
-                пространство организовано с акцентом на комфорт, приватность и удобство жителей.
-              </p>
-            </div>
-          </div>
-
-          <div class="object_about_items">
-            <div class="object_about_item">
-              <p>Местоположение</p>
-              <h2>г. Бишкек, ул. Малдыбаева , 279/ул. А. Масалиева</h2>
-            </div>
-            <div class="object_about_item">
-              <p>Тип объекта</p>
-              <h2>Жилой дом</h2>
-            </div>
-            <div class="object_about_item">
-              <p>Этажность</p>
-              <h2>15</h2>
-            </div>
-            <div class="object_about_item">
-              <p>Кол-во блоков</p>
-              <h2>1 блок</h2>
-            </div>
-          </div>
-
-          <div class="object_about_right">
-            <p>Кол-во квартир</p>
-            <h2>94</h2>
-          </div>
-        </div>
-      </section>
-
-      <section class="object">
-        <div class="object_content">
-          <p class="object_subtitle">Об объекте</p>
-          <h2 class="object_title">Cambridge от Royal — британская элегантность в каждом дне</h2>
-        </div>
-        <div class="object_img_content">
-          <img src="./assets/img/object_img.png" class="object_img" alt="" />
-        </div>
-        <div class="object_bg">
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-          <p>Cambridge</p>
-        </div>
-      </section>
-
-      <section class="object_gallery">
-        <p class="object_gallery_title">Галлерея</p>
-        <div class="object_gallery_line1"></div>
-        <div class="object_gallery_line2"></div>
-        <div class="swiper gallery_swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="./assets/img/gallery_1.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/img/gallery_1.png" alt="" />
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="object_gallery_pag">
-            <div class="object_gallery_left">
-              <img src="./assets/img/gallery_arrow_left.svg" alt="" />
-            </div>
-            <div class="object_gallery_right">
-              <img src="./assets/img/gallery_arrow_right.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="object_location">
-        <h2 class="object_location_title">Идеальное расположение для комфортной жизни</h2>
-        <div class="object_location_content">
-          <img src="./assets/img/location.png" class="object_location_img" alt="" />
-          <div class="object_location_items">
-            <div class="object_location_item">
-              <div class="object_location_item_info">
-                <h2>10 <span>минут</span></h2>
-                <p>На машине до мечети</p>
-              </div>
-              <div class="object_location_arrow">
-                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21.3748 1.01537C21.3289 0.464989 20.8456 0.0560013 20.2952 0.101866L11.3263 0.849276C10.7759 0.89514 10.3669 1.37849 10.4128 1.92887C10.4587 2.47924 10.942 2.88823 11.4924 2.84237L19.4648 2.178L20.1291 10.1504C20.175 10.7007 20.6583 11.1097 21.2087 11.0639C21.7591 11.018 22.1681 10.5347 22.1222 9.98428L21.3748 1.01537ZM1 24L1.76339 24.6459L21.1417 1.74435L20.3783 1.09841L19.6149 0.45247L0.236614 23.3541L1 24Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="object_location_item">
-              <div class="object_location_item_info">
-                <h2>5 <span>минут</span></h2>
-                <p>Пешком до Парка Победы</p>
-              </div>
-              <div class="object_location_arrow">
-                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21.3748 1.01537C21.3289 0.464989 20.8456 0.0560013 20.2952 0.101866L11.3263 0.849276C10.7759 0.89514 10.3669 1.37849 10.4128 1.92887C10.4587 2.47924 10.942 2.88823 11.4924 2.84237L19.4648 2.178L20.1291 10.1504C20.175 10.7007 20.6583 11.1097 21.2087 11.0639C21.7591 11.018 22.1681 10.5347 22.1222 9.98428L21.3748 1.01537ZM1 24L1.76339 24.6459L21.1417 1.74435L20.3783 1.09841L19.6149 0.45247L0.236614 23.3541L1 24Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="object_location_item">
-              <div class="object_location_item_info">
-                <h2>15 <span>минут</span></h2>
-                <p>Пешком до торгового центра “Tommi”</p>
-              </div>
-              <div class="object_location_arrow">
-                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21.3748 1.01537C21.3289 0.464989 20.8456 0.0560013 20.2952 0.101866L11.3263 0.849276C10.7759 0.89514 10.3669 1.37849 10.4128 1.92887C10.4587 2.47924 10.942 2.88823 11.4924 2.84237L19.4648 2.178L20.1291 10.1504C20.175 10.7007 20.6583 11.1097 21.2087 11.0639C21.7591 11.018 22.1681 10.5347 22.1222 9.98428L21.3748 1.01537ZM1 24L1.76339 24.6459L21.1417 1.74435L20.3783 1.09841L19.6149 0.45247L0.236614 23.3541L1 24Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="object_location_item">
-              <div class="object_location_item_info">
-                <h2>25 <span>минут</span></h2>
-                <p>На машине до волейбольного зала</p>
-              </div>
-              <div class="object_location_arrow">
-                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21.3748 1.01537C21.3289 0.464989 20.8456 0.0560013 20.2952 0.101866L11.3263 0.849276C10.7759 0.89514 10.3669 1.37849 10.4128 1.92887C10.4587 2.47924 10.942 2.88823 11.4924 2.84237L19.4648 2.178L20.1291 10.1504C20.175 10.7007 20.6583 11.1097 21.2087 11.0639C21.7591 11.018 22.1681 10.5347 22.1222 9.98428L21.3748 1.01537ZM1 24L1.76339 24.6459L21.1417 1.74435L20.3783 1.09841L19.6149 0.45247L0.236614 23.3541L1 24Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="object_sorting">
-        <div class="object_sorting_content container">
-          <div class="object_sorting_top">
-            <h2 class="object_sorting_subtitle">Квартиры</h2>
-            <h2 class="object_sorting_title">Подберите идеальное пространство для жизни и уюта</h2>
-          </div>
-          <div class="object_sorting_items">
-            <div class="object_sorting_item">
-              <p>Блок</p>
-              <img src="./assets/img/object_filters_img.png" alt="" />
-            </div>
-            <div class="object_sorting_right">
-              <div class="object_sorting_item">
-                <p>Этаж</p>
-                <div class="object_sorting_item_floor">
-                  <div class="object_floor_item">1</div>
-                  <div class="object_floor_item">2</div>
-                  <div class="object_floor_item">3</div>
-                  <div class="object_floor_item">4</div>
-                  <div class="object_floor_item">5</div>
-                  <div class="object_floor_item">6</div>
-                  <div class="object_floor_item">7</div>
-                  <div class="object_floor_item">8</div>
-                  <div class="object_floor_item">9</div>
-                  <div class="object_floor_item">10</div>
-                  <div class="object_floor_item">11</div>
-                  <div class="object_floor_item">12</div>
-                  <div class="object_floor_item">13</div>
-                  <div class="object_floor_item">14</div>
-                </div>
-              </div>
-              <div class="object_sorting_bottom">
-                <div class="object_sorting_bottom_left">
-                  <div class="object_sorting_item">
-                    <p>Площадь квартиры</p>
-                    <div class="range_slider object_sorting_range">
-                      <div class="values">
-                        <div class="range_item"><span id="min-value-object">10</span></div>
-                        <div class="range_item"><span id="max-value-object">300</span></div>
-                      </div>
-                      <input type="range" id="min" min="10" max="300" value="10" />
-                      <input type="range" id="max" min="10" max="300" value="300" />
-                    </div>
-                  </div>
-                  <div class="object_sorting_item">
-                    <p>Кол-во комнат</p>
-                    <div class="object_sorting_item_floor">
-                      <div class="object_floor_item">1</div>
-                      <div class="object_floor_item">2</div>
-                      <div class="object_floor_item">3</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="object_sorting_clear">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M15.8327 5.34102L14.6577 4.16602L9.99935 8.82435L5.34102 4.16602L4.16602 5.34102L8.82435 9.99935L4.16602 14.6577L5.34102 15.8327L9.99935 11.1743L14.6577 15.8327L15.8327 14.6577L11.1743 9.99935L15.8327 5.34102Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <p>Сбросить</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="object_sorting_mobile">
-            <div class="object_sorting_mobile_item">
-              <div class="object_sorting_item">
-                <p>Блок</p>
-                <div class="object_sorting_item_floor">
-                  <div class="object_floor_item">1</div>
-                  <div class="object_floor_item">2</div>
-                </div>
-              </div>
-              <div class="object_sorting_item range_item_object">
-                <p>Этаж</p>
-                <div class="range_slider object_sorting_range">
-                  <div class="values">
-                    <div class="range_item"><span id="min-value-object">1</span></div>
-                    <div class="range_item"><span id="max-value-object">30</span></div>
-                  </div>
-                  <input type="range" id="min" min="5" max="30" value="1" />
-                  <input type="range" id="max" min="5" max="30" value="30" />
-                </div>
-              </div>
-            </div>
-            <div class="object_sorting_mobile_item">
-              <div class="object_sorting_item">
-                <p>Кол-во комнат</p>
-                <div class="object_sorting_item_floor">
-                  <div class="object_floor_item">1</div>
-                  <div class="object_floor_item">2</div>
-                  <div class="object_floor_item">3</div>
-                </div>
-              </div>
-              <div class="object_sorting_item range_item_object">
-                <p>Площадь квартиры</p>
-                <div class="range_slider object_sorting_range">
-                  <div class="values">
-                    <div class="range_item"><span id="min-value-object">10</span></div>
-                    <div class="range_item"><span id="max-value-object">300</span></div>
-                  </div>
-                  <input type="range" id="min" min="10" max="300" value="1" />
-                  <input type="range" id="max" min="10" max="300" value="30" />
-                </div>
-              </div>
-            </div>
-            <div class="object_sorting_clear">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M15.8327 5.34102L14.6577 4.16602L9.99935 8.82435L5.34102 4.16602L4.16602 5.34102L8.82435 9.99935L4.16602 14.6577L5.34102 15.8327L9.99935 11.1743L14.6577 15.8327L15.8327 14.6577L11.1743 9.99935L15.8327 5.34102Z"
-                  fill="currentColor"
-                />
-              </svg>
-              <p>Сбросить</p>
-            </div>
-          </div>
-        </div>
-        <div class="object_filters">
-          <div class="object_filters_items">
-            <div class="object_filters_item" data-floor="1" data-rooms="3" data-area="161.83">
-              <div class="object_filters_item_img"><img src="./assets/img/object_filter_1.png" alt="" /></div>
-              <div class="object_filters_item_bottom">
-                <h2><span>4</span>-комнатная квартирa “Б”</h2>
-                <p>161, 83 м2</p>
-              </div>
-            </div>
-            <div class="object_filters_item" data-floor="3" data-rooms="3" data-area="161.83">
-              <div class="object_filters_item_img"><img src="./assets/img/object_filter_2.png" alt="" /></div>
-              <div class="object_filters_item_bottom">
-                <h2><span>4</span>-комнатная квартирa “Б”</h2>
-                <p>161, 83 м2</p>
-              </div>
-            </div>
-            <div class="object_filters_item" data-floor="1" data-rooms="2" data-area="161.83">
-              <div class="object_filters_item_img"><img src="./assets/img/object_filter_3.png" alt="" /></div>
-              <div class="object_filters_item_bottom">
-                <h2><span>4</span>-комнатная квартирa “Б”</h2>
-                <p>161, 83 м2</p>
-              </div>
-            </div>
-            <div class="object_filters_item" data-floor="1" data-rooms="3" data-area="161.83">
-              <div class="object_filters_item_img"><img src="./assets/img/object_filter_1.png" alt="" /></div>
-              <div class="object_filters_item_bottom">
-                <h2><span>4</span>-комнатная квартирa “Б”</h2>
-                <p>161, 83 м2</p>
-              </div>
-            </div>
-            <div class="object_filters_item" data-floor="1" data-rooms="3" data-area="161.83">
-              <div class="object_filters_item_img"><img src="./assets/img/object_filter_2.png" alt="" /></div>
-              <div class="object_filters_item_bottom">
-                <h2><span>4</span>-комнатная квартирa “Б”</h2>
-                <p>161, 83 м2</p>
-              </div>
-            </div>
-            <div class="object_filters_item" data-floor="1" data-rooms="3" data-area="161.83">
-              <div class="object_filters_item_img"><img src="./assets/img/object_filter_3.png" alt="" /></div>
-              <div class="object_filters_item_bottom">
-                <h2><span>4</span>-комнатная квартирa “Б”</h2>
-                <p>161, 83 м2</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="categories">
         <div class="categories_content container">
-          <h2 class="categories_title gsap-fade-down">Не Упустите: ещё несколько достойных вариантов</h2>
+          <p class="categories_name gsap-fade-left">Объекты</p>
+          <h2 class="categories_title gsap-fade-down">Фильтруйте. Сравнивайте. <span>Выбирайте.</span></h2>
+          <div class="categories_top gsap-fade-down">
+            <div class="categories_top_objects">
+              <div class="categories_top_item active">30 объектов</div>
+              <div class="categories_top_item">8 Жилых домой</div>
+            </div>
+          </div>
+          <div class="categories_statuses gsap-fade-down">
+            <div class="categories_status" data-status="all">Все</div>
+            <div class="categories_status" data-status="building">Строящиеся</div>
+            <div class="categories_status" data-status="complete">Завершенные</div>
+            <div class="categories_status" data-status="stage_complete">На стадии завершения</div>
+          </div>
+          <div class="categories_sort gsap-fade-down">
+            <div class="custom_select">
+              <div class="custom_select_selected">
+                Выберите локацию
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19 8.5L12 15.5L5 8.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="custom_select_content">
+                <div class="custom_select_item">1 локация</div>
+                <div class="custom_select_item">2 локация</div>
+                <div class="custom_select_item">3 локация</div>
+              </div>
+            </div>
+            <div class="range_slider">
+              <div class="values">
+                <div class="range_item"><span id="min-value">1</span> этажей</div>
+                <div class="range_item"><span id="max-value">30</span> этажей</div>
+              </div>
+              <input type="range" id="min" min="5" max="30" value="1" />
+              <input type="range" id="max" min="5" max="30" value="30" />
+            </div>
+            <div class="categories_sort_status">
+              <div class="categories_status" data-type="apart">Квартиры</div>
+              <div class="categories_status" data-type="office">Офисы</div>
+              <div class="categories_status" data-type="cottage">Коттеджи</div>
+              <div class="categories_status" data-type="commerce">Коммерческие помещения</div>
+            </div>
+          </div>
         </div>
 
         <div class="categories_items container">
-          <div class="categories_item" data-status="building" data-type="apart" data-location="Бишкек" data-floors="10">
+          <div
+            class="categories_item gsap-fade-right"
+            data-status="building"
+            data-type="apart"
+            data-location="Бишкек"
+            data-floors="10"
+          >
             <h2 class="categories_item_title">Ынтымак</h2>
             <div class="categories_item_info">
               <p class="categories_item_status">Строится</p>
               <p class="categories_item_address">
-                <img src="./assets/img/location.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.0541 15.687L13.3957 13.3453C13.4057 13.3353 13.4149 13.3253 13.4241 13.3153C13.4241 13.3153 13.8316 12.8503 14.4157 12.182C15.5932 10.8361 16.1507 9.05695 15.9516 7.28029C15.7524 5.50362 14.8149 3.89195 13.3691 2.84029L13.3674 2.83945C11.3741 1.38945 8.67241 1.38945 6.67824 2.83945L6.67657 2.84029C5.23074 3.89195 4.29324 5.50362 4.09407 7.28029C3.89574 9.05695 4.45241 10.8361 5.62991 12.182C6.21491 12.8503 6.62157 13.3153 6.62157 13.3153C6.63074 13.3253 6.63991 13.3353 6.64991 13.3453L8.99157 15.687C9.56157 16.257 10.4849 16.257 11.0541 15.687ZM10.1699 14.8036C10.0891 14.8845 9.95741 14.8845 9.87574 14.8036L7.54907 12.4761L6.57074 11.3586C5.62491 10.277 5.17657 8.84779 5.33657 7.41945C5.49657 5.99112 6.24991 4.69695 7.41241 3.85112L7.41324 3.85029C8.96907 2.71862 11.0766 2.71862 12.6324 3.85029L12.6341 3.85112C13.7957 4.69695 14.5491 5.99112 14.7091 7.41945C14.8691 8.84779 14.4216 10.277 13.4749 11.3586L12.4974 12.4761L10.1699 14.8036Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.0807 5.29029C8.86074 5.29029 7.87074 6.28112 7.87074 7.50112C7.87074 8.72112 8.86074 9.71195 10.0807 9.71195C11.3007 9.71195 12.2916 8.72112 12.2916 7.50112C12.2916 6.28112 11.3007 5.29029 10.0807 5.29029ZM10.0807 6.54029C10.6107 6.54029 11.0416 6.97112 11.0416 7.50112C11.0416 8.03112 10.6107 8.46195 10.0807 8.46195C9.55074 8.46195 9.12074 8.03112 9.12074 7.50112C9.12074 6.97112 9.55074 6.54029 10.0807 6.54029Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.99991 18.1261H14.9999C15.3449 18.1261 15.6249 17.8461 15.6249 17.5011C15.6249 17.1561 15.3449 16.8761 14.9999 16.8761H4.99991C4.65491 16.8761 4.37491 17.1561 4.37491 17.5011C4.37491 17.8461 4.65491 18.1261 4.99991 18.1261Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Молдобасанова 8а
               </p>
               <p class="categories_item_address">
-                <img src="./assets/img/home.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.24984 18.1251H13.789C14.8282 18.1251 15.8257 17.7126 16.5607 16.9776C17.2957 16.2426 17.7082 15.2451 17.7082 14.2059V8.7451C17.7082 7.76594 17.2515 6.8426 16.474 6.2476C15.1265 5.21677 12.7265 3.38177 11.3748 2.34844C10.5632 1.7276 9.4365 1.7276 8.62484 2.34844C7.77723 2.99618 6.51735 3.95961 5.36331 4.84211C4.67928 5.36518 4.03244 5.85982 3.53067 6.24344C2.74984 6.84094 2.2915 7.7676 2.2915 8.75094V14.1668C2.2915 15.2168 2.70817 16.2234 3.45067 16.9659C4.19317 17.7084 5.19984 18.1251 6.24984 18.1251ZM15.6765 16.0934C15.1757 16.5943 14.4973 16.8751 13.789 16.8751H12.7082V14.5832C12.7082 13.3176 11.6822 12.2915 10.4165 12.2915H9.58317C8.31752 12.2915 7.2915 13.3176 7.2915 14.5832V16.8751H6.24984C5.5315 16.8751 4.84234 16.5901 4.33484 16.0818C3.8265 15.5743 3.5415 14.8851 3.5415 14.1668V8.75094C3.5415 8.1576 3.81817 7.5976 4.28984 7.23677C5.38942 6.39611 7.18566 5.02229 8.5432 3.98401C8.8503 3.74913 9.13495 3.53142 9.384 3.34094C9.74734 3.06344 10.2523 3.06344 10.6157 3.34094C11.2335 3.81327 12.0704 4.45328 12.9257 5.10736C13.9415 5.88422 14.9833 6.68092 15.7148 7.2401C16.1832 7.59844 16.4582 8.1551 16.4582 8.7451V14.2059C16.4582 14.9143 16.1773 15.5926 15.6765 16.0934ZM8.5415 16.8751V14.5832C8.5415 14.0079 9.00787 13.5415 9.58317 13.5415H10.4165C10.9918 13.5415 11.4582 14.0079 11.4582 14.5832V16.8751H8.5415Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Центр отдыха
               </p>
             </div>
@@ -597,16 +355,48 @@
             </div>
           </div>
 
-          <div class="categories_item" data-status="complete" data-type="office" data-location="Бишкек" data-floors="5">
+          <div
+            class="categories_item gsap-fade-left"
+            data-status="complete"
+            data-type="office"
+            data-location="Бишкек"
+            data-floors="5"
+          >
             <h2 class="categories_item_title">Tower</h2>
             <div class="categories_item_info">
               <p class="categories_item_status complete">Завершен</p>
               <p class="categories_item_address">
-                <img src="./assets/img/location.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.0541 15.687L13.3957 13.3453C13.4057 13.3353 13.4149 13.3253 13.4241 13.3153C13.4241 13.3153 13.8316 12.8503 14.4157 12.182C15.5932 10.8361 16.1507 9.05695 15.9516 7.28029C15.7524 5.50362 14.8149 3.89195 13.3691 2.84029L13.3674 2.83945C11.3741 1.38945 8.67241 1.38945 6.67824 2.83945L6.67657 2.84029C5.23074 3.89195 4.29324 5.50362 4.09407 7.28029C3.89574 9.05695 4.45241 10.8361 5.62991 12.182C6.21491 12.8503 6.62157 13.3153 6.62157 13.3153C6.63074 13.3253 6.63991 13.3353 6.64991 13.3453L8.99157 15.687C9.56157 16.257 10.4849 16.257 11.0541 15.687ZM10.1699 14.8036C10.0891 14.8845 9.95741 14.8845 9.87574 14.8036L7.54907 12.4761L6.57074 11.3586C5.62491 10.277 5.17657 8.84779 5.33657 7.41945C5.49657 5.99112 6.24991 4.69695 7.41241 3.85112L7.41324 3.85029C8.96907 2.71862 11.0766 2.71862 12.6324 3.85029L12.6341 3.85112C13.7957 4.69695 14.5491 5.99112 14.7091 7.41945C14.8691 8.84779 14.4216 10.277 13.4749 11.3586L12.4974 12.4761L10.1699 14.8036Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.0807 5.29029C8.86074 5.29029 7.87074 6.28112 7.87074 7.50112C7.87074 8.72112 8.86074 9.71195 10.0807 9.71195C11.3007 9.71195 12.2916 8.72112 12.2916 7.50112C12.2916 6.28112 11.3007 5.29029 10.0807 5.29029ZM10.0807 6.54029C10.6107 6.54029 11.0416 6.97112 11.0416 7.50112C11.0416 8.03112 10.6107 8.46195 10.0807 8.46195C9.55074 8.46195 9.12074 8.03112 9.12074 7.50112C9.12074 6.97112 9.55074 6.54029 10.0807 6.54029Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.99991 18.1261H14.9999C15.3449 18.1261 15.6249 17.8461 15.6249 17.5011C15.6249 17.1561 15.3449 16.8761 14.9999 16.8761H4.99991C4.65491 16.8761 4.37491 17.1561 4.37491 17.5011C4.37491 17.8461 4.65491 18.1261 4.99991 18.1261Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 пр. Чынгыз Айтматова
               </p>
               <p class="categories_item_address">
-                <img src="./assets/img/home.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.24984 18.1251H13.789C14.8282 18.1251 15.8257 17.7126 16.5607 16.9776C17.2957 16.2426 17.7082 15.2451 17.7082 14.2059V8.7451C17.7082 7.76594 17.2515 6.8426 16.474 6.2476C15.1265 5.21677 12.7265 3.38177 11.3748 2.34844C10.5632 1.7276 9.4365 1.7276 8.62484 2.34844C7.77723 2.99618 6.51735 3.95961 5.36331 4.84211C4.67928 5.36518 4.03244 5.85982 3.53067 6.24344C2.74984 6.84094 2.2915 7.7676 2.2915 8.75094V14.1668C2.2915 15.2168 2.70817 16.2234 3.45067 16.9659C4.19317 17.7084 5.19984 18.1251 6.24984 18.1251ZM15.6765 16.0934C15.1757 16.5943 14.4973 16.8751 13.789 16.8751H12.7082V14.5832C12.7082 13.3176 11.6822 12.2915 10.4165 12.2915H9.58317C8.31752 12.2915 7.2915 13.3176 7.2915 14.5832V16.8751H6.24984C5.5315 16.8751 4.84234 16.5901 4.33484 16.0818C3.8265 15.5743 3.5415 14.8851 3.5415 14.1668V8.75094C3.5415 8.1576 3.81817 7.5976 4.28984 7.23677C5.38942 6.39611 7.18566 5.02229 8.5432 3.98401C8.8503 3.74913 9.13495 3.53142 9.384 3.34094C9.74734 3.06344 10.2523 3.06344 10.6157 3.34094C11.2335 3.81327 12.0704 4.45328 12.9257 5.10736C13.9415 5.88422 14.9833 6.68092 15.7148 7.2401C16.1832 7.59844 16.4582 8.1551 16.4582 8.7451V14.2059C16.4582 14.9143 16.1773 15.5926 15.6765 16.0934ZM8.5415 16.8751V14.5832C8.5415 14.0079 9.00787 13.5415 9.58317 13.5415H10.4165C10.9918 13.5415 11.4582 14.0079 11.4582 14.5832V16.8751H8.5415Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Жилой дом
               </p>
             </div>
@@ -616,16 +406,48 @@
             </div>
           </div>
 
-          <div class="categories_item" data-status="building" data-type="apart" data-location="Бишкек" data-floors="10">
+          <div
+            class="categories_item gsap-fade-right"
+            data-status="building"
+            data-type="apart"
+            data-location="Бишкек"
+            data-floors="10"
+          >
             <h2 class="categories_item_title">Royal Resort</h2>
             <div class="categories_item_info">
               <p class="categories_item_status">Строится</p>
               <p class="categories_item_address">
-                <img src="./assets/img/location.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.0541 15.687L13.3957 13.3453C13.4057 13.3353 13.4149 13.3253 13.4241 13.3153C13.4241 13.3153 13.8316 12.8503 14.4157 12.182C15.5932 10.8361 16.1507 9.05695 15.9516 7.28029C15.7524 5.50362 14.8149 3.89195 13.3691 2.84029L13.3674 2.83945C11.3741 1.38945 8.67241 1.38945 6.67824 2.83945L6.67657 2.84029C5.23074 3.89195 4.29324 5.50362 4.09407 7.28029C3.89574 9.05695 4.45241 10.8361 5.62991 12.182C6.21491 12.8503 6.62157 13.3153 6.62157 13.3153C6.63074 13.3253 6.63991 13.3353 6.64991 13.3453L8.99157 15.687C9.56157 16.257 10.4849 16.257 11.0541 15.687ZM10.1699 14.8036C10.0891 14.8845 9.95741 14.8845 9.87574 14.8036L7.54907 12.4761L6.57074 11.3586C5.62491 10.277 5.17657 8.84779 5.33657 7.41945C5.49657 5.99112 6.24991 4.69695 7.41241 3.85112L7.41324 3.85029C8.96907 2.71862 11.0766 2.71862 12.6324 3.85029L12.6341 3.85112C13.7957 4.69695 14.5491 5.99112 14.7091 7.41945C14.8691 8.84779 14.4216 10.277 13.4749 11.3586L12.4974 12.4761L10.1699 14.8036Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.0807 5.29029C8.86074 5.29029 7.87074 6.28112 7.87074 7.50112C7.87074 8.72112 8.86074 9.71195 10.0807 9.71195C11.3007 9.71195 12.2916 8.72112 12.2916 7.50112C12.2916 6.28112 11.3007 5.29029 10.0807 5.29029ZM10.0807 6.54029C10.6107 6.54029 11.0416 6.97112 11.0416 7.50112C11.0416 8.03112 10.6107 8.46195 10.0807 8.46195C9.55074 8.46195 9.12074 8.03112 9.12074 7.50112C9.12074 6.97112 9.55074 6.54029 10.0807 6.54029Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.99991 18.1261H14.9999C15.3449 18.1261 15.6249 17.8461 15.6249 17.5011C15.6249 17.1561 15.3449 16.8761 14.9999 16.8761H4.99991C4.65491 16.8761 4.37491 17.1561 4.37491 17.5011C4.37491 17.8461 4.65491 18.1261 4.99991 18.1261Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 с. Чок-Тал Иссык-Куль
               </p>
               <p class="categories_item_address">
-                <img src="./assets/img/home.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.24984 18.1251H13.789C14.8282 18.1251 15.8257 17.7126 16.5607 16.9776C17.2957 16.2426 17.7082 15.2451 17.7082 14.2059V8.7451C17.7082 7.76594 17.2515 6.8426 16.474 6.2476C15.1265 5.21677 12.7265 3.38177 11.3748 2.34844C10.5632 1.7276 9.4365 1.7276 8.62484 2.34844C7.77723 2.99618 6.51735 3.95961 5.36331 4.84211C4.67928 5.36518 4.03244 5.85982 3.53067 6.24344C2.74984 6.84094 2.2915 7.7676 2.2915 8.75094V14.1668C2.2915 15.2168 2.70817 16.2234 3.45067 16.9659C4.19317 17.7084 5.19984 18.1251 6.24984 18.1251ZM15.6765 16.0934C15.1757 16.5943 14.4973 16.8751 13.789 16.8751H12.7082V14.5832C12.7082 13.3176 11.6822 12.2915 10.4165 12.2915H9.58317C8.31752 12.2915 7.2915 13.3176 7.2915 14.5832V16.8751H6.24984C5.5315 16.8751 4.84234 16.5901 4.33484 16.0818C3.8265 15.5743 3.5415 14.8851 3.5415 14.1668V8.75094C3.5415 8.1576 3.81817 7.5976 4.28984 7.23677C5.38942 6.39611 7.18566 5.02229 8.5432 3.98401C8.8503 3.74913 9.13495 3.53142 9.384 3.34094C9.74734 3.06344 10.2523 3.06344 10.6157 3.34094C11.2335 3.81327 12.0704 4.45328 12.9257 5.10736C13.9415 5.88422 14.9833 6.68092 15.7148 7.2401C16.1832 7.59844 16.4582 8.1551 16.4582 8.7451V14.2059C16.4582 14.9143 16.1773 15.5926 15.6765 16.0934ZM8.5415 16.8751V14.5832C8.5415 14.0079 9.00787 13.5415 9.58317 13.5415H10.4165C10.9918 13.5415 11.4582 14.0079 11.4582 14.5832V16.8751H8.5415Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Центр отдыха
               </p>
             </div>
@@ -641,16 +463,48 @@
             </div>
           </div>
 
-          <div class="categories_item" data-status="building" data-type="apart" data-location="Бишкек" data-floors="10">
+          <div
+            class="categories_item gsap-fade-left"
+            data-status="building"
+            data-type="apart"
+            data-location="Бишкек"
+            data-floors="10"
+          >
             <h2 class="categories_item_title">Cambridge</h2>
             <div class="categories_item_info">
               <p class="categories_item_status complete">Завершен</p>
               <p class="categories_item_address">
-                <img src="./assets/img/location.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.0541 15.687L13.3957 13.3453C13.4057 13.3353 13.4149 13.3253 13.4241 13.3153C13.4241 13.3153 13.8316 12.8503 14.4157 12.182C15.5932 10.8361 16.1507 9.05695 15.9516 7.28029C15.7524 5.50362 14.8149 3.89195 13.3691 2.84029L13.3674 2.83945C11.3741 1.38945 8.67241 1.38945 6.67824 2.83945L6.67657 2.84029C5.23074 3.89195 4.29324 5.50362 4.09407 7.28029C3.89574 9.05695 4.45241 10.8361 5.62991 12.182C6.21491 12.8503 6.62157 13.3153 6.62157 13.3153C6.63074 13.3253 6.63991 13.3353 6.64991 13.3453L8.99157 15.687C9.56157 16.257 10.4849 16.257 11.0541 15.687ZM10.1699 14.8036C10.0891 14.8845 9.95741 14.8845 9.87574 14.8036L7.54907 12.4761L6.57074 11.3586C5.62491 10.277 5.17657 8.84779 5.33657 7.41945C5.49657 5.99112 6.24991 4.69695 7.41241 3.85112L7.41324 3.85029C8.96907 2.71862 11.0766 2.71862 12.6324 3.85029L12.6341 3.85112C13.7957 4.69695 14.5491 5.99112 14.7091 7.41945C14.8691 8.84779 14.4216 10.277 13.4749 11.3586L12.4974 12.4761L10.1699 14.8036Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.0807 5.29029C8.86074 5.29029 7.87074 6.28112 7.87074 7.50112C7.87074 8.72112 8.86074 9.71195 10.0807 9.71195C11.3007 9.71195 12.2916 8.72112 12.2916 7.50112C12.2916 6.28112 11.3007 5.29029 10.0807 5.29029ZM10.0807 6.54029C10.6107 6.54029 11.0416 6.97112 11.0416 7.50112C11.0416 8.03112 10.6107 8.46195 10.0807 8.46195C9.55074 8.46195 9.12074 8.03112 9.12074 7.50112C9.12074 6.97112 9.55074 6.54029 10.0807 6.54029Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.99991 18.1261H14.9999C15.3449 18.1261 15.6249 17.8461 15.6249 17.5011C15.6249 17.1561 15.3449 16.8761 14.9999 16.8761H4.99991C4.65491 16.8761 4.37491 17.1561 4.37491 17.5011C4.37491 17.8461 4.65491 18.1261 4.99991 18.1261Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Малдыбаева 279
               </p>
               <p class="categories_item_address">
-                <img src="./assets/img/home.svg" alt="" />
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.24984 18.1251H13.789C14.8282 18.1251 15.8257 17.7126 16.5607 16.9776C17.2957 16.2426 17.7082 15.2451 17.7082 14.2059V8.7451C17.7082 7.76594 17.2515 6.8426 16.474 6.2476C15.1265 5.21677 12.7265 3.38177 11.3748 2.34844C10.5632 1.7276 9.4365 1.7276 8.62484 2.34844C7.77723 2.99618 6.51735 3.95961 5.36331 4.84211C4.67928 5.36518 4.03244 5.85982 3.53067 6.24344C2.74984 6.84094 2.2915 7.7676 2.2915 8.75094V14.1668C2.2915 15.2168 2.70817 16.2234 3.45067 16.9659C4.19317 17.7084 5.19984 18.1251 6.24984 18.1251ZM15.6765 16.0934C15.1757 16.5943 14.4973 16.8751 13.789 16.8751H12.7082V14.5832C12.7082 13.3176 11.6822 12.2915 10.4165 12.2915H9.58317C8.31752 12.2915 7.2915 13.3176 7.2915 14.5832V16.8751H6.24984C5.5315 16.8751 4.84234 16.5901 4.33484 16.0818C3.8265 15.5743 3.5415 14.8851 3.5415 14.1668V8.75094C3.5415 8.1576 3.81817 7.5976 4.28984 7.23677C5.38942 6.39611 7.18566 5.02229 8.5432 3.98401C8.8503 3.74913 9.13495 3.53142 9.384 3.34094C9.74734 3.06344 10.2523 3.06344 10.6157 3.34094C11.2335 3.81327 12.0704 4.45328 12.9257 5.10736C13.9415 5.88422 14.9833 6.68092 15.7148 7.2401C16.1832 7.59844 16.4582 8.1551 16.4582 8.7451V14.2059C16.4582 14.9143 16.1773 15.5926 15.6765 16.0934ZM8.5415 16.8751V14.5832C8.5415 14.0079 9.00787 13.5415 9.58317 13.5415H10.4165C10.9918 13.5415 11.4582 14.0079 11.4582 14.5832V16.8751H8.5415Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Жилой дом
               </p>
             </div>
@@ -667,36 +521,9 @@
           </div>
         </div>
 
-        <div class="categories_bottom container">
-          <div class="btn_wrapper">
-            <div class="btn_read">
-              <div class="btn_bg">
-                <span></span>
-              </div>
-              Смотреть все
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="contacts">
-        <div class="contacts_content container">
-          <h2 class="contacts_title">
-            <span>Доверьтесь нам</span> <br />
-            мы приведём вас к вашему будущему дому.
-          </h2>
-          <form action="" class="contacts_form">
-            <input type="text" class="contacts_input" required placeholder="Ваше имя" />
-            <input type="text" class="contacts_input" required placeholder="Ваш номер телефона" />
-            <div class="btn_wrapper">
-              <div class="btn_read">
-                <div class="btn_bg">
-                  <span></span>
-                </div>
-                Отправить
-              </div>
-            </div>
-          </form>
+        <div class="categories_no_data">
+          <h2>"По выбранным параметрам объектов не найдено."</h2>
+          <p>Попробуйте изменить фильтры или сбросить их.</p>
         </div>
       </section>
     </main>
@@ -817,44 +644,7 @@
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./assets/js/object-animations.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="./assets/js/main.js"></script>
-
-    <script>
-      AOS.init();
-
-      let swiper = new Swiper(".gallery_swiper", {
-        navigation: {
-          nextEl: ".object_gallery_right",
-          prevEl: ".object_gallery_left",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        speed: 1500,
-        effect: "creative",
-        creativeEffect: {
-          prev: {
-            translate: ["-100%", 0, 0],
-            scale: 1.1,
-          },
-          next: {
-            translate: ["100%", 0, 0],
-            scale: 1.1,
-          },
-        },
-        on: {
-          init: function () {
-            this.slides.forEach((slide) => {
-              slide.style.transformOrigin = "right center";
-            });
-          },
-          slideChangeTransitionStart: function () {},
-        },
-      });
-    </script>
   </body>
 </html>
