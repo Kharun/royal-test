@@ -64,7 +64,15 @@ $(window).on("scroll", function () {
 $(".nav_theme").click(function () {
   document.body.classList.toggle("dark");
   $(this).toggleClass("active");
+
+  if ($(this).hasClass("main")) return;
+  $(".nav_theme_block").toggleClass("active");
 });
+
+$(".nav_theme.main").click(function () {
+  $(".nav_theme_block.main").toggleClass("active");
+});
+
 $(".burger_menu").click(function () {
   $(".menu").toggleClass("active");
 });
