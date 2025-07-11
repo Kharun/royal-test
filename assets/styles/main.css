@@ -2019,6 +2019,7 @@ h2 {
   position: relative;
   border-right: 1px solid #e9e9e9;
   border-left: 1px solid #e9e9e9;
+  cursor: pointer;
 }
 .object_filters_item::before {
   content: "";
@@ -2605,6 +2606,9 @@ h2 {
   z-index: 2;
   text-align: center;
 }
+.btn_read::before {
+  content: unset;
+}
 .btn_bg {
   position: absolute;
   width: 143px;
@@ -2827,6 +2831,31 @@ h2 {
   height: 1000px;
   opacity: 0;
   visibility: hidden;
+}
+.categories_bottom_clear {
+  display: flex;
+}
+.clear_filters {
+  margin-top: 20px;
+  background: var(--green);
+  color: var(--white-white);
+  padding: 10px;
+  border-radius: 100px;
+  display: none;
+  align-items: center;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  transition: .1s linear;
+  border: 1px solid var(--green);
+  cursor: pointer;
+}
+.clear_filters.active {
+  display: flex;
+}
+.clear_filters:hover {
+  background: unset;
+  color: var(--green);
 }
 
 @media screen and (max-width: 1100px) {

@@ -280,6 +280,19 @@ $(document).ready(function () {
       $(".categories_no_data").removeClass("active");
       $(".categories_bottom").removeClass("hidden");
     }
+
+    const hasFilters =
+      selectedStatus !== "all" ||
+      selectedTypes.length > 0 ||
+      selectedLocation ||
+      parseInt($("#min").attr("min")) !== minFloors ||
+      parseInt($("#max").attr("max")) !== maxFloors;
+
+    if (hasFilters) {
+      $(".clear_filters").addClass("active");
+    } else {
+      $(".clear_filters").removeClass("active");
+    }
   }
 
   const minSlider = document.getElementById("min");
@@ -305,6 +318,25 @@ $(document).ready(function () {
       minValue.textContent = minSlider.value;
     }
     maxValue.textContent = maxSlider.value;
+    filterItems();
+  });
+
+  $(".clear_filters").on("click", function () {
+    if (!$(this).hasClass("active")) return;
+
+    $(".categories_statuses .categories_status").removeClass("active");
+    $(".categories_statuses .categories_status[data-status='all']").addClass("active");
+
+    $(".categories_sort_status .categories_status").removeClass("active");
+
+    $(".categories_select").val("");
+
+    minSlider.value = minSlider.getAttribute("min");
+    maxSlider.value = maxSlider.getAttribute("max");
+
+    minValue.textContent = minSlider.value;
+    maxValue.textContent = maxSlider.value;
+
     filterItems();
   });
 
