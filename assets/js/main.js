@@ -182,6 +182,10 @@ document.querySelectorAll(".news_item").forEach((item) => {
   setupCustomCursorElement(item, ".news_cursor");
 });
 
+document.querySelectorAll(".reviews_item").forEach((item) => {
+  setupCustomCursorElement(item, ".reviews_cursor");
+});
+
 function setupCustomCursorElement(element, cursorSelector) {
   const cursor = document.querySelector(cursorSelector);
 

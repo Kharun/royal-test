@@ -254,6 +254,63 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.to(".header_text", {
+    y: -70,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".header_company",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".header_company_bg", {
+    y: -100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".header_company",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".company_info_top_item img", {
+    y: -60,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".company_info",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".company_info_bottom_item img", {
+    y: -60,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".company_info",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".company_item img", {
+    y: -100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".object_gallery",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
 const activeAnimations = new Map();
 
 function splitTextToSpans(element) {
