@@ -3602,6 +3602,9 @@ h2 {
   .contacts_top_title {
     padding-top: 30px;
   }
+  .company_team_content {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 480px) {
   .header_swiper_content h2 {
