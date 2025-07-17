@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="./assets/styles/hamburgers.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <title>Royal Test</title>
@@ -517,9 +516,7 @@
                 <h2 class="">О компании</h2>
                 <img class="" src="./assets/img/about_img_2.png" alt="" />
               </div>
-              <div class="about_right_img_wrapper">
-                <img class="about_right_img" src="./assets/img/about_img_1.png" alt="" />
-              </div>
+              <img class="about_right_img" src="./assets/img/about_img_1.png" alt="" />
             </div>
           </div>
         </div>
@@ -834,21 +831,29 @@
             </p>
           </div>
           <div class="abous_us_number_items">
-            <div class="abous_us_number_item">
-              <h2>3000+</h2>
-              <p>рабочих мест создано</p>
+            <div class="abous_us_number_left">
+              <div class="abous_us_number_item">
+                <h2>3000+</h2>
+                <p>рабочих мест создано</p>
+              </div>
+              <div class="abous_us_number_item">
+                <h2>29</h2>
+                <p>объектов</p>
+              </div>
             </div>
-            <div class="abous_us_number_item">
-              <h2>29</h2>
-              <p>объектов</p>
-            </div>
-            <div class="abous_us_number_item">
-              <h2>13</h2>
-              <p>лет на рынке Кыргызстана</p>
-            </div>
-            <div class="abous_us_number_item">
-              <h2>5000+</h2>
-              <p>довольных клиентов</p>
+
+            <div class="abous_us_number_right">
+              <div class="abous_us_number_item">
+                <h2>13</h2>
+                <p>
+                  лет на рынке <br />
+                  Кыргызстана
+                </p>
+              </div>
+              <div class="abous_us_number_item">
+                <h2>5000+</h2>
+                <p>довольных клиентов</p>
+              </div>
             </div>
           </div>
         </div>
@@ -857,11 +862,11 @@
       <section class="reviews">
         <div class="reviews_content container">
           <div class="reviews_top_title">
-            <h2 data-aos="fade-right" data-aos-duration="2500">Реальные мнения — <span>настоящие эмоции</span></h2>
-            <p data-aos="fade-left" data-aos-duration="2000">Отзывы</p>
+            <h2>Реальные мнения — <span>настоящие эмоции</span></h2>
+            <p>Отзывы</p>
           </div>
           <div class="reviews_items">
-            <div class="reviews_item" data-aos="fade-up" data-aos-duration="1500">
+            <div class="reviews_item">
               <div class="reviews_item_info">
                 <h2>Мы рады, что вы выбираете нас!</h2>
                 <p>- Назгуль Бекмурзаева, 2024</p>
@@ -871,13 +876,13 @@
                 <img src="./assets/img/reviews_1.png" alt="" />
               </div>
             </div>
-            <div class="reviews_subtitle" data-aos="fade-right" data-aos-duration="1500">
+            <div class="reviews_subtitle">
               <p>Когда доверие строится на опыте и деталях — слушайте тех, кто уже выбрал</p>
               <h2 class="reviews_subtitle_title"><span>R</span>oyal.</h2>
             </div>
           </div>
           <div class="reviews_bottom">
-            <div class="reviews_item" data-aos="fade-right" data-aos-duration="2000">
+            <div class="reviews_item">
               <div class="reviews_item_info">
                 <h2>Отзыв клиентки из Дубая, которая приехала купить квартиру и выбрала наш ЖК АРЧА!</h2>
                 <p>- Анастасия Владимировна, 2024</p>
@@ -887,7 +892,7 @@
                 <img src="./assets/img/reviews_3.png" alt="" />
               </div>
             </div>
-            <div class="reviews_item reviews_bottom_item" data-aos="fade-left" data-aos-duration="1500">
+            <div class="reviews_item reviews_bottom_item">
               <div class="reviews_item_info">
                 <h2>«МЫ НА СЕБЕ ЭКОНОМИТЬ НЕ БУДЕМ», - прораб жилого комплекса Royal Касымов Шакир</h2>
                 <p>- Касымов Шакир, 2024</p>
@@ -1014,16 +1019,32 @@
             <input type="text" class="contacts_input" required placeholder="Ваше имя" />
             <input type="text" class="contacts_input" required placeholder="Ваш номер телефона" />
             <div class="btn_wrapper">
-              <div class="btn_read">
+              <button class="btn_read">
                 <div class="btn_bg">
                   <span></span>
                 </div>
                 Отправить
-              </div>
+              </button>
             </div>
           </form>
         </div>
       </section>
+
+      <div class="contact_success">
+        <img src="./assets/img/contact_success.svg" alt="" />
+        <div class="contact_success_item">
+          <p class="contact_success_title">Успешно!</p>
+          <p class="contact_success_text">Ваша заявка отправлена</p>
+        </div>
+      </div>
+
+      <div class="contact_failed">
+        <img src="./assets/img/contact_failed.svg" alt="" />
+        <div class="contact_success_item">
+          <p class="contact_success_title">Ошибка!</p>
+          <p class="contact_success_text">Попробуйте позже еще раз</p>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
@@ -1078,7 +1099,7 @@
                   </div>
                 </div>
                 <div class="footer_right">
-                  <img src="./assets/img/footer_img.png" alt="" />
+                  <img src="./assets/img/footer_logo.svg" alt="" />
                 </div>
               </div>
 
@@ -1125,7 +1146,7 @@
           </div>
         </div>
         <div class="footer_right mobile">
-          <img src="./assets/img/footer_img.png" alt="" />
+          <img src="./assets/img/footer_logo.svg" alt="" />
         </div>
       </div>
     </footer>
@@ -1142,13 +1163,11 @@
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/home-animations.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
     <script>
-      AOS.init();
       let swiper = new Swiper(".header_swiper", {
         navigation: {
           nextEl: ".header_pag_next",

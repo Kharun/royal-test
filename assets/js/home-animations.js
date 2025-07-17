@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerPag = $(".header_pag");
   const headerBg = $(".header_swiper_bg");
 
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const targetMaxWidth = isMobile ? "25%" : "6%";
+
   gsap.set([headerSwiperContent, headerPagination, headerPag], { opacity: 0 });
   gsap.set(headerBg, { scale: 1.4 });
   gsap.set(headerRoyal, {
@@ -15,43 +18,30 @@ document.addEventListener("DOMContentLoaded", () => {
     top: "50%",
   });
 
-  ScrollTrigger.create({
-    trigger: header,
-    start: "top top",
-    end: "+=1000",
-    pin: true,
-    scrub: 1,
-    onUpdate: (self) => {
-      const progress = self.progress;
+  const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
-      gsap.to(headerRoyal, {
-        scale: 1 - progress * 0.5,
-        maxWidth: `${100 - (100 - 6) * progress}%`,
-        top: `${50 - 43 * progress}%`,
-        ease: "power2.out",
-      });
-
-      if (progress > 0.7) {
-        gsap.to([headerSwiperContent, headerPagination, headerPag], {
-          opacity: 1,
-          duration: 0.5,
-        });
-      } else {
-        gsap.to([headerSwiperContent, headerPagination, headerPag], {
-          opacity: 0,
-          duration: 0.5,
-        });
-      }
-
-      gsap.to(headerBg, {
-        scale: 1.4 - progress * 0.4,
-        ease: "power2.out",
-      });
-    },
-    onLeave: () => {
-      gsap.to(header, { position: "relative" });
-    },
-  });
+  tl.to(headerRoyal, {
+    scale: 0.5,
+    maxWidth: targetMaxWidth,
+    top: "7%",
+    duration: 2,
+  })
+    .to(
+      headerBg,
+      {
+        scale: 1,
+        duration: 2,
+      },
+      "<"
+    )
+    .to(
+      [headerSwiperContent, headerPagination, headerPag],
+      {
+        opacity: 1,
+        duration: 1,
+      },
+      "-=1"
+    );
 });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -328,16 +318,16 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  gsap.to(".about_right_img", {
-    y: -100,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
+  // gsap.to(".about_right_img", {
+  //   y: -100,
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: ".about",
+  //     start: "top bottom",
+  //     end: "bottom top",
+  //     scrub: true,
+  //   },
+  // });
 
   gsap.to(".reviews_item_image img", {
     y: -100,

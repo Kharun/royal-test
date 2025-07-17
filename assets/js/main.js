@@ -6,6 +6,7 @@ const topObjectsNavs = $(".categories_top_item");
 $(".hamburger").on("click", function () {
   $(".hamburger").toggleClass("is-active");
   $(".menu").toggleClass("active");
+  $("html").toggleClass("no-scroll");
 });
 
 window.addEventListener("load", () => {
@@ -143,6 +144,40 @@ $(document).ready(function () {
     link.addEventListener("mouseleave", () => {
       gsap.to(text, { y: "0%", duration: 0.4, ease: "power2.in" });
     });
+  });
+});
+
+// Contact form
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contacts_form");
+  const successBlock = document.querySelector(".contact_success");
+  const failedBlock = document.querySelector(".contact_failed");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector('input[placeholder="Ваше имя"]').value.trim();
+    const phone = form.querySelector('input[placeholder="Ваш номер телефона"]').value.trim();
+
+    try {
+      const response = await fetch("https://your-api-endpoint.com/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, phone }),
+      });
+
+      if (!response.ok) throw new Error("Ошибка сети");
+
+      successBlock.classList.add("active");
+      setTimeout(() => successBlock.classList.remove("active"), 5000);
+      form.reset();
+    } catch (error) {
+      failedBlock.classList.add("active");
+      setTimeout(() => failedBlock.classList.remove("active"), 5000);
+      console.error("Ошибка отправки формы:", error);
+    }
   });
 });
 

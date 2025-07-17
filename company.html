@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./assets/styles/hamburgers.css" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Royal Test</title>
   </head>
   <body>
@@ -127,15 +126,12 @@
             <i class="icon-logo"></i>
           </a>
           <div class="nav_right">
-            <a href="" class="nav_objects mobile">Квартиры и объекты</a>
-            <div class="nav_right">
-              <a href="./all_objects.html" class="nav_objects">Квартиры и объекты</a>
-              <button class="hamburger hamburger--spin" type="button">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner menu_hamburger"></span>
-                </span>
-              </button>
-            </div>
+            <a href="./all_objects.html" class="nav_objects">Квартиры и объекты</a>
+            <button class="hamburger hamburger--spin" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner menu_hamburger"></span>
+              </span>
+            </button>
           </div>
         </div>
         <div class="menu_nav_top">
@@ -207,7 +203,7 @@
               <span class="text-bottom">отзывы /</span>
             </span>
           </a>
-          <a href="" class="menu_link">
+          <a href="./contacts.html" class="menu_link">
             <span class="text-wrapper">
               <span class="text-top">контакты</span>
               <span class="text-bottom">контакты</span>
@@ -359,7 +355,10 @@
               <div class="company_item">
                 <img src="./assets/img/company_gallery_1.png" alt="" />
                 <div class="company_item_content">
-                  <h2 class="company_item_top_title">Ценности компании <span>R</span>oyal</h2>
+                  <h2 class="company_item_top_title">
+                    Ценности компании
+                    <p><span>R</span>oyal</p>
+                  </h2>
                   <div class="company_item_info">
                     <p>Качество и надёжность</p>
                     <p>
@@ -514,16 +513,32 @@
             <input type="text" class="contacts_input" required placeholder="Ваше имя" />
             <input type="text" class="contacts_input" required placeholder="Ваш номер телефона" />
             <div class="btn_wrapper">
-              <div class="btn_read">
+              <button class="btn_read">
                 <div class="btn_bg">
                   <span></span>
                 </div>
                 Отправить
-              </div>
+              </button>
             </div>
           </form>
         </div>
       </section>
+
+      <div class="contact_success">
+        <img src="./assets/img/contact_success.svg" alt="" />
+        <div class="contact_success_item">
+          <p class="contact_success_title">Успешно!</p>
+          <p class="contact_success_text">Ваша заявка отправлена</p>
+        </div>
+      </div>
+
+      <div class="contact_failed">
+        <img src="./assets/img/contact_failed.svg" alt="" />
+        <div class="contact_success_item">
+          <p class="contact_success_title">Ошибка!</p>
+          <p class="contact_success_text">Попробуйте позже еще раз</p>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
@@ -578,7 +593,7 @@
                   </div>
                 </div>
                 <div class="footer_right">
-                  <img src="./assets/img/footer_img.png" alt="" />
+                  <img src="./assets/img/footer_logo.svg" alt="" />
                 </div>
               </div>
 
@@ -625,7 +640,7 @@
           </div>
         </div>
         <div class="footer_right mobile">
-          <img src="./assets/img/footer_img.png" alt="" />
+          <img src="./assets/img/footer_logo.svg" alt="" />
         </div>
       </div>
     </footer>
@@ -642,14 +657,11 @@
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/company-animations.js"></script>
 
     <script>
-      AOS.init();
-
       let swiper = new Swiper(".gallery_swiper", {
         navigation: {
           nextEl: ".object_gallery_right",

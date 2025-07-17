@@ -356,3 +356,32 @@ document.addEventListener("DOMContentLoaded", () => {
 //       });
 //   }
 // });
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const fromEl = document.querySelector(".object_img_content");
+  const toEl = document.querySelector(".gallery_target");
+
+  if (!fromEl || !toEl) return;
+
+  const fromRect = fromEl.getBoundingClientRect();
+  const toRect = toEl.getBoundingClientRect();
+
+  const deltaY = toRect.top - fromRect.top;
+  const deltaX = toRect.left - fromRect.left;
+
+  gsap.to(fromEl, {
+    scrollTrigger: {
+      trigger: ".object",
+      start: "bottom bottom",
+      endTrigger: ".object_gallery",
+      end: "top top",
+      scrub: true,
+    },
+    y: deltaY,
+    x: deltaX,
+    ease: "none",
+    scale: 1.5,
+  });
+});

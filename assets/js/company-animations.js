@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       trigger: ".company_center",
       start: "top top",
-      end: "+=100%",
+      end: "+=200%",
       pin: true,
       scrub: true,
     });
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
           trigger: ".company_center",
           start: "top top",
-          end: "+=100%",
+          end: "+=200%",
           scrub: true,
         },
       }
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
           trigger: ".company_center",
           start: "top top",
-          end: "+=100%",
+          end: "+=200%",
           scrub: true,
         },
       }
@@ -363,7 +363,7 @@ function animateIn(slide) {
     {
       opacity: 1,
       y: 0,
-      stagger: { each: 0.01, from: "random" },
+      stagger: { each: 0.004, from: "start" },
       duration: 0.1,
       ease: "power2.out",
     }
