@@ -3,12 +3,6 @@ const langContent = $(".nav_lang_content");
 const nav = $(".nav_object");
 const topObjectsNavs = $(".categories_top_item");
 
-$(".hamburger").on("click", function () {
-  $(".hamburger").toggleClass("is-active");
-  $(".menu").toggleClass("active");
-  $("html").toggleClass("no-scroll");
-});
-
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
@@ -22,8 +16,19 @@ function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 }
-
 requestAnimationFrame(raf);
+
+$(".hamburger").on("click", function () {
+  $(".hamburger").toggleClass("is-active");
+  $(".menu").toggleClass("active");
+  $("html").toggleClass("no-scroll");
+
+  if ($(".menu").hasClass("active")) {
+    lenis.stop();
+  } else {
+    lenis.start();
+  }
+});
 
 let lastScrollTop = 0;
 const threshold = 700;
