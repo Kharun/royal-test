@@ -59,14 +59,6 @@ $(window).on("scroll", function () {
   lastScrollTop = currentScroll;
 });
 
-$(window).on("scroll", function () {
-  if ($(this).scrollTop() >= 1000) {
-    $(".nav_main").addClass("active");
-  } else {
-    $(".nav_main").removeClass("active");
-  }
-});
-
 $(".nav_theme").click(function () {
   document.body.classList.toggle("dark");
   $(this).toggleClass("active");

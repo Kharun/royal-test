@@ -1127,10 +1127,10 @@ h2 {
   gap: 100px;
 }
 .abous_us_number_left .abous_us_number_item:first-child h2 {
-  min-width: 295px;
+  width: 295px;
 }
 .abous_us_number_right .abous_us_number_item:last-child h2 {
-  min-width: 295px;
+  width: 295px;
 }
 
 /* reviews */
@@ -2668,6 +2668,9 @@ h2 {
   transform: scale(1.9);
   background: unset;
 }
+.btn_wrapper {
+  text-decoration: none;
+}
 
 .btn_bg::before,
 .btn_bg::after {
@@ -3640,6 +3643,9 @@ h2 {
     align-items: start;
     gap: 60px;
     padding-top: 48px;
+  }
+  .abous_us_number {
+    max-height: 650px;
   }
 }
 @media screen and (max-width: 560px) {
