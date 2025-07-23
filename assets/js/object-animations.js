@@ -291,51 +291,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const title = document.querySelector(".header_object_title");
-  const titleLetters = title.textContent.split("");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const title = document.querySelector(".header_object_title");
+//   const titleLetters = title.textContent.split("");
 
-  title.innerHTML = titleLetters
-    .map((letter) =>
-      letter === " " ? `<span class="letter-title space"> </span>` : `<span class="letter-title">${letter}</span>`
-    )
-    .join("");
+//   title.innerHTML = titleLetters
+//     .map((letter) =>
+//       letter === " " ? `<span class="letter-title space"> </span>` : `<span class="letter-title">${letter}</span>`
+//     )
+//     .join("");
 
-  gsap.from(".letter-title", {
-    opacity: 0,
-    y: 20,
-    scale: 0.3,
-    duration: 0.8,
-    stagger: {
-      each: 0.3,
-      from: "random",
-    },
-    ease: "power2.out",
-  });
-});
+//   gsap.from(".letter-title", {
+//     opacity: 0,
+//     y: 20,
+//     scale: 0.3,
+//     duration: 0.8,
+//     stagger: {
+//       each: 0.3,
+//       from: "random",
+//     },
+//     ease: "power2.out",
+//   });
+// });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const text = document.querySelector(".header_object_text");
-  const letters = text.textContent.split("");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const text = document.querySelector(".header_object_text");
+//   const letters = text.textContent.split("");
 
-  text.innerHTML = letters
-    .map((letter) => {
-      return letter === " " ? `<span class="letter space"> </span>` : `<span class="letter">${letter}</span>`;
-    })
-    .join("");
+//   text.innerHTML = letters
+//     .map((letter) => {
+//       return letter === " " ? `<span class="letter space"> </span>` : `<span class="letter">${letter}</span>`;
+//     })
+//     .join("");
 
-  gsap.from(".letter", {
-    opacity: 0,
-    y: 20,
-    scale: 0.3,
-    duration: 0.8,
-    stagger: {
-      each: 0.03,
-      from: "random",
-    },
-    ease: "power2.out",
-  });
-});
+//   gsap.from(".letter", {
+//     opacity: 0,
+//     y: 20,
+//     scale: 0.3,
+//     duration: 0.8,
+//     stagger: {
+//       each: 0.03,
+//       from: "random",
+//     },
+//     ease: "power2.out",
+//   });
+// });
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   if (window.matchMedia("(min-width: 1024px)").matches) {
@@ -356,6 +356,52 @@ document.addEventListener("DOMContentLoaded", () => {
 //       });
 //   }
 // });
+
+function splitText(selector) {
+  const el = document.querySelector(selector);
+  const text = el.innerText;
+  el.innerHTML = "";
+  text.split("").forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char === " " ? "\u00A0" : char;
+    el.appendChild(span);
+  });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  splitText(".header_object_title");
+  splitText(".header_object_text");
+
+  const tl = gsap.timeline({ delay: 0.5 });
+
+  tl.to(".header_object_title span", {
+    opacity: 1,
+    rotateX: 0,
+    y: 0,
+    duration: 1.2,
+    ease: "power4.out",
+    stagger: {
+      amount: 0.5,
+      from: "start",
+    },
+  });
+
+  tl.to(
+    ".header_object_text span",
+    {
+      opacity: 1,
+      rotateX: 0,
+      y: 0,
+      duration: 1.2,
+      ease: "back.out(1.7)",
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+    },
+    "-=0.8"
+  );
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);

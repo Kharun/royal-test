@@ -1551,6 +1551,12 @@ h2 {
 .nav_object i {
   color: var(--white);
 }
+.header_object_title span,
+.header_object_text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(80px) rotateX(90deg);
+}
 
 /*  */
 .custom-cursor,
@@ -2801,6 +2807,22 @@ h2 {
 }
 .page_transition_line.active {
   width: 100%;
+}
+.text_transition {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Pramodia";
+  font-weight: 400;
+  font-size: 132px;
+  color: var(--gray);
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.text_transition.active {
+  opacity: 1;
 }
 
 /* contacts_top */

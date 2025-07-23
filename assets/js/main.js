@@ -84,6 +84,8 @@ window.addEventListener("load", () => {
     line.classList.remove("active");
   });
 
+  $(".text_transition").removeClass("active");
+
   setTimeout(() => {
     transition.classList.add("hidden");
   }, 500);
@@ -94,6 +96,7 @@ document.querySelectorAll("a").forEach((link) => {
     if (this.classList.contains("link_none")) return;
 
     e.preventDefault();
+    $(".text_transition").addClass("active");
     const url = this.getAttribute("href");
     const transition = document.querySelector(".page_transition");
     const lines = document.querySelectorAll(".page_transition_line");
