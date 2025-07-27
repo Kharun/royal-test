@@ -282,7 +282,6 @@ document.addEventListener("DOMContentLoaded", () => {
     opacity: 0,
     y: 50,
     duration: 1.2,
-    stagger: 0.15,
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".object_filters_items",
