@@ -2986,6 +2986,40 @@ h2 {
   font-size: 15px;
 }
 
+/* panorama details */
+.custom-hotspot {
+  border: 2px solid #fff;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: #cca92c;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  border-radius: 50%;
+}
+.custom-tooltip {
+  position: absolute;
+  text-transform: uppercase;
+  color: #313131;
+  font-size: 0.875em;
+  width: 180px;
+  left: -106px;
+  bottom: calc(100% + 15px);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  padding: 10px 15px;
+  border: 2px solid #cca92c;
+}
+#panorama {
+  height: 100vh;
+  max-height: 1080px;
+  background: var(--white-secondary);
+}
+.pnlm-render-container a {
+  position: unset;
+}
+
 @media screen and (max-width: 1100px) {
   .object_sorting_items {
     display: none;

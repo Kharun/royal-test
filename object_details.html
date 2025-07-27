@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles/hamburgers.css" />
-    <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
     <title>Royal Test</title>
   </head>
   <body>
@@ -330,9 +331,9 @@
         </div>
       </section>
 
-      <section class="object_details_360">
+      <section class="object_details_360" id="panorama">
         <h2 class="object_details_360_title">Внутрення отделка</h2>
-        <img src="./assets/img/360_img.png" class="object_details_360_img" alt="" />
+        <!-- <img src="./assets/img/360_img.png" class="object_details_360_img" alt="" /> -->
       </section>
 
       <section class="object_sorting">
@@ -653,6 +654,162 @@
         >
       </div>
     </div>
+
+    <!-- Ponorama -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <!-- <script>
+      pannellum.viewer("panorama", {
+        type: "equirectangular",
+        panorama: "./assets/img/360_photo.jpg",
+      });
+    </script> -->
+    <script>
+      window.onload = (event) => {
+        viewer = pannellum.viewer("panorama", {
+          type: "equirectangular",
+          panorama: "./assets/img/360_photo.jpg",
+          hotSpotDebug: false,
+          autoRotate: -2,
+          autoLoad: true,
+          mouseZoom: false,
+          yaw: -347.053012774938,
+          pitch: -28.508555155433243,
+          hotSpots: [
+            // {
+            //   pitch: -1.5097370799757224,
+            //   yaw: 96.94147496270472,
+            //   cssClass: "custom-hotspot",
+            //   createTooltipFunc: hotspotCustomLogo,
+            //   createTooltipArgs: "four-seasons",
+            // },
+            {
+              pitch: -3.7251920501733373,
+              yaw: -28.844300658303137,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/royal-garden/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "Royal Garden" },
+            },
+            {
+              pitch: -46.76515770950367,
+              yaw: 17.704110265695633,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/royal/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "ROYAL" },
+            },
+            {
+              pitch: -19.131585260202204,
+              yaw: -0.3701575327588369,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/cambridge/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "CAMBRIDGE" },
+            },
+            {
+              pitch: -43.80639632205994,
+              yaw: 36.520871286099265,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/royal-tower/",
+              createTooltipArgs: { title: "Небоскрёб", name: "ROYAL TOWER" },
+            },
+            {
+              pitch: -25.752837659184262,
+              yaw: 91.90791932209203,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/consul/",
+              createTooltipArgs: { title: "Клубный дом", name: "CONSUL" },
+            },
+            {
+              pitch: -53.9335009080016,
+              yaw: 29.696202851465443,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/diplomat/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "ДИПЛОМАТ" },
+            },
+            {
+              pitch: -7.59714774773242,
+              yaw: -40.204771453994645,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/brooklyn/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "BROOKLYN" },
+            },
+            {
+              pitch: -14.764817015744107,
+              yaw: -163.70252626757147,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/archa/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "ARCHA" },
+            },
+            {
+              pitch: -13.206519875640103,
+              yaw: -86.39835164974635,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/skoro-novyj-obekt/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "Эпос" },
+            },
+            {
+              pitch: -11.830920584530853,
+              yaw: 7.837338629139026,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/skoro-novyj-zhiloj-kompleks-2/",
+              createTooltipArgs: { title: "Жилой комплекс", name: "YNTYMAK" },
+            },
+            {
+              pitch: -3.9317972548862725,
+              yaw: -24.181902255408314,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/skoro-novyj-zhiloj-kompleks/",
+              createTooltipArgs: { title: "", name: "СКОРО!" },
+            },
+            {
+              pitch: -16.29204792188403,
+              yaw: -11.499163338442768,
+              cssClass: "custom-hotspot",
+              createTooltipFunc: hotspot,
+              // URL: "https://royal.kg/object/skoro-novyj-business-center/",
+              createTooltipArgs: { title: "Бизнес-центр", name: "ALA - TOO" },
+            },
+          ],
+        });
+
+        // Hot spot creation function
+        function hotspot(hotSpotDiv, args) {
+          hotSpotDiv.classList.add("custom-hotspot");
+          var divBlock = document.createElement("div");
+          divBlock.classList.add("custom-tooltip");
+          var span = document.createElement("span");
+          var divName = document.createElement("div");
+          span.innerHTML = args?.title;
+          divName.innerHTML = args?.name;
+          divName.classList.add("custom-tooltip-name");
+
+          divBlock.appendChild(span);
+          divBlock.appendChild(divName);
+          hotSpotDiv.appendChild(divBlock);
+        }
+        function hotspotFourSeasons(hotSpotDiv, args) {
+          var divBlock = document.createElement("div");
+          divBlock.classList.add("custom-tooltip-logo");
+          divBlock.classList.add("four-seasons");
+          hotSpotDiv.appendChild(divBlock);
+        }
+        function hotspotCustomLogo(hotSpotDiv, args) {
+          var divBlock = document.createElement("div");
+          divBlock.classList.add("custom-tooltip-logo");
+          divBlock.classList.add(args);
+          hotSpotDiv.appendChild(divBlock);
+        }
+      };
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
