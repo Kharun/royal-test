@@ -91,6 +91,38 @@ window.addEventListener("load", () => {
   }, 500);
 });
 
+// page transition
+function runEnterTransition() {
+  const transition = document.querySelector(".page_transition");
+  if (!transition) return;
+
+  const lines = document.querySelectorAll(".page_transition_line");
+
+  transition.classList.remove("hidden");
+
+  lines.forEach((line) => line.classList.remove("active"));
+  if (window.jQuery) $(".text_transition").removeClass("active");
+
+  void transition.offsetWidth;
+
+  setTimeout(() => {
+    transition.classList.add("hidden");
+  }, 500);
+}
+
+function runLeaveTransition() {
+  const transition = document.querySelector(".page_transition");
+  if (!transition) return;
+  transition.classList.remove("hidden");
+}
+window.addEventListener("load", runEnterTransition);
+window.addEventListener("pageshow", (e) => {
+  runEnterTransition();
+});
+window.addEventListener("pagehide", runLeaveTransition);
+window.addEventListener("beforeunload", runLeaveTransition);
+// page transition
+
 document.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", function (e) {
     if (this.classList.contains("link_none")) return;
